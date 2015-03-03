@@ -1,5 +1,7 @@
-/.metadata
+/.metadata/
 /bin/
-/eclipse
+/eclipse/
 */gradle.log
-*/taskArtifacts
+*/taskArtifacts/
+*/tmp/
+*/natives/
