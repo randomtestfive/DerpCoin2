@@ -8,18 +8,18 @@
 :compileApiJava UP-TO-DATE
 :processApiResources UP-TO-DATE
 :apiClasses UP-TO-DATE
-:sourceMainJava UP-TO-DATE
-:compileJava UP-TO-DATE
-:processResources UP-TO-DATE
-:classes UP-TO-DATE
+:sourceMainJava
+:compileJava
+:processResources
+:classes
 :jar
 :compileTestJava UP-TO-DATE
 :processTestResources UP-TO-DATE
 :testClasses UP-TO-DATE
 :test UP-TO-DATE
-:extractMcpData UP-TO-DATE
+:extractMcpData
 :getVersionJson
-:extractUserDev UP-TO-DATE
+:extractUserDev
 :genSrgs SKIPPED
 :reobf
 :assemble
@@ -28,4 +28,4 @@
 
 BUILD SUCCESSFUL
 
-Total time: 9.7 secs
+Total time: 13.332 secs
