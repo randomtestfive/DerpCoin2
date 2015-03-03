@@ -2,6 +2,6 @@
 /bin/
 /eclipse/*
 /.gradle/gradle.log
-/.gradle/2.0/taskArtifacts/
+/.gradle/2.0/taskArtifacts/*
 */tmp/*
 */natives/*
