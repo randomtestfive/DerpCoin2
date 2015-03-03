@@ -1,2 +1,0 @@
-# DerpCoin2
-DerpCoin

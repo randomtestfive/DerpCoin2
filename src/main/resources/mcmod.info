@@ -1,0 +1,16 @@
+[
+{
+  "modid": "DerpCoin",
+  "name": "DerpCoin",
+  "description": "It does some things!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Sir Jeffers"],
+  "credits": "Time Travel",
+  "logoFile": "derpcoin:derpCoin",
+  "screenshots": [],
+  "dependencies": []
+}
+]

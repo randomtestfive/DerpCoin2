@@ -1,0 +1,10 @@
+item.genericItem.name=Generic Item
+item.magicItem.name=Magic Item
+item.derpCoin.name=DerpCoin
+tile.derpCoinBlock.name=DerpCoin Block
+itemGroup.tabDerpCoin=DerpCoin
+itemGroup.DerpCoin=DerpCoin
+item.magicClockForward.name=Magic Clock (Forward)
+item.magicClockBackward.name=Magic Clock (Backward)
+item.magicClock.name=Magic Clock
+item.derpIngot.name=DerpCoin Ingot
