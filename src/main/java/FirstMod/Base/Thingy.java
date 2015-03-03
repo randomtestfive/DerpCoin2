@@ -108,6 +108,6 @@ public class Thingy
 		GameRegistry.addSmelting(Items.gold_nugget, new ItemStack(derpCoin), 0.2f);
 		//client.registerRenderers();
 		RenderingRegistry.registerEntityRenderingHandler(DerpCoinProjectile.class, new RenderSnowball(derpCoin));
-		System.out.println("Everything loaded.");
+		System.out.println("Everything loaded...");
     }
 }
