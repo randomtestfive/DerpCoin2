@@ -77,9 +77,10 @@ public class MagicClock extends Item
 	@Override
 	public ItemStack onItemRightClick(ItemStack par1Stack, World par2World, EntityPlayer par3Player)
 	{
+		System.out.println("rightclick");
 		ItemStack Output = par1Stack;
 		if(par3Player.isSneaking())
-		{	
+		{
 				System.out.println(par1Stack.getItemDamage());
 				if(par1Stack.getItemDamage() == 0)
 				{
@@ -91,7 +92,6 @@ public class MagicClock extends Item
 					par1Stack.setItemDamage(1);
 					System.out.println("went to 1");
 				}
-				par3Player.setItemInUse(par1Stack, 1);
 				getIconFromDamage(par1Stack.getItemDamage());
 				System.out.println("started using");	
 		}
@@ -112,12 +112,14 @@ public class MagicClock extends Item
 			}
 		}
 		System.out.println(par1Stack.getItemDamage());
+		par3Player.setItemInUse(par1Stack, 20);
 		return Output;
 	}
 	
 	@Override
 	public void onPlayerStoppedUsing(ItemStack par1Stack, World p_77974_1_, EntityPlayer p_77974_2_, int p_77974_3_)
 	{
+		System.out.println("stopclick");
 		if(par1Stack.getItemDamage() == 1 || par1Stack.getItemDamage() == 3)
 		{
 			par1Stack.setItemDamage(par1Stack.getItemDamage() - 1);
