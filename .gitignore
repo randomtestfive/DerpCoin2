@@ -5,3 +5,4 @@
 \.gradle\2.0\taskArtifacts\*
 */tmp/*
 */natives/*
+/.classpath
