@@ -11,6 +11,7 @@ public class MagicToggledownfall extends Item
 	{
 		this.setCreativeTab(derpTab.tabDerpCoin);
 		this.setMaxStackSize(1);
+		this.setUnlocalizedName("MagicDownfall");
 	}
 	
 	 public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,EntityPlayer par3EntityPlayer) 

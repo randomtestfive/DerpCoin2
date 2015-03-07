@@ -41,6 +41,7 @@ public class Thingy
     public static MagicClockBackward magicClockBackward;
     public static MagicClock magicClock;
     public static Item derpIngot;
+    public static MagicToggledownfall magicDownfall;
     //TutorialEventHandler events = new TutorialEventHandler();
     
     @EventHandler
@@ -55,6 +56,9 @@ public class Thingy
 		magicItem.setUnlocalizedName("magicItem");
 		magicItem.setMaxStackSize(1);
 		magicItem.setCreativeTab(derpTab.tabDerpCoin);
+		
+		magicDownfall = new MagicToggledownfall();
+		GameRegistry.registerItem(magicDownfall, "MagicDownfall");
 		
 		/*magicClockForward = new MagicClockForward();
 		GameRegistry.registerItem(magicClockForward, "magicClockForward");
