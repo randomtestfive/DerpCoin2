@@ -28,7 +28,7 @@ public class MagicToggledownfall extends Item
 				 }
 				 else
 				 {
-					 par2World.setRainStrength(2);
+					 par2World.setRainStrength(1);
 				 }
 			 }		 
 		 }
