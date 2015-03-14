@@ -6,4 +6,5 @@ Features Include:
   DerpCoin Blocks (WIP)
   Magic Items
   Magic Clocks
+  Magic Downfall
 And soon to be many more!
