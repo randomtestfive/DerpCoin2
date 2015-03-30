@@ -7,4 +7,4 @@ Features Include:
   Magic Items
   Magic Clocks
   Magic Downfall
-And soon to be many more!
+And soon to be many more! But, currently, very unfinished. 
