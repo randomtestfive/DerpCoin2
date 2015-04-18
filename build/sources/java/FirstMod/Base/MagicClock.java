@@ -35,11 +35,11 @@ public class MagicClock extends Item
 	@Override
 	public IIcon getIconFromDamage(int meta) 
 	{
-		if (meta == 0 || meta == 1)
+		if (meta == 0)
 		{
 			return forward;
 		}
-		else if(meta == 2 || meta == 3)
+		else if(meta == 1)
 		{
 			return backward;
 		}
@@ -63,7 +63,7 @@ public class MagicClock extends Item
 		}
 		else
 		{
-			stack.setItemDamage(2);
+			stack.setItemDamage(1);
 		}
 	}
 	
@@ -84,35 +84,38 @@ public class MagicClock extends Item
 				System.out.println(par1Stack.getItemDamage());
 				if(par1Stack.getItemDamage() == 0)
 				{
-					par1Stack.setItemDamage(3);
+					par3Player.setItemInUse(par1Stack, 100000);
+					par1Stack.setItemDamage(1);
 					System.out.println("went to 3");
 				}
-				else if(par1Stack.getItemDamage() == 2)
+				else if(par1Stack.getItemDamage() == 1)
 				{
-					par1Stack.setItemDamage(1);
+					par3Player.setItemInUse(par1Stack, 100000);
+					par1Stack.setItemDamage(0);
 					System.out.println("went to 1");
 				}
 				getIconFromDamage(par1Stack.getItemDamage());
-				System.out.println("started using");	
+				System.out.println("started using");
+				return Output;
 		}
 		else
 		{
 			if (par3Player.capabilities.isCreativeMode||par3Player.inventory.consumeInventoryItem(Thingy.derpCoin))
 			{
-				if(par1Stack.getItemDamage() == 0 || par1Stack.getItemDamage() == 1)
+				if(par1Stack.getItemDamage() == 0)
 				{
 					par2World.setWorldTime(par2World.getWorldTime() + 1000);
-					par1Stack.setItemDamage(0);
+					
 				}
 				else
 				{
 					par2World.setWorldTime(par2World.getWorldTime() - 1000);
-					par1Stack.setItemDamage(2);
+					
 				}
 			}
 		}
 		System.out.println(par1Stack.getItemDamage());
-		par3Player.setItemInUse(par1Stack, 20);
+		//par3Player.setItemInUse(par1Stack, 20);
 		return Output;
 	}
 	
@@ -120,10 +123,6 @@ public class MagicClock extends Item
 	public void onPlayerStoppedUsing(ItemStack par1Stack, World p_77974_1_, EntityPlayer p_77974_2_, int p_77974_3_)
 	{
 		System.out.println("stopclick");
-		if(par1Stack.getItemDamage() == 1 || par1Stack.getItemDamage() == 3)
-		{
-			par1Stack.setItemDamage(par1Stack.getItemDamage() - 1);
-		}
 		getIconFromDamage(par1Stack.getItemDamage());
 		System.out.println("stopped using");
 		System.out.println(par1Stack.getItemDamage());
