@@ -6,3 +6,5 @@
 */tmp/*
 */natives/*
 /.classpath
+*Thumbs.db
+/build/libs/*
