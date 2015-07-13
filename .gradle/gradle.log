@@ -8,8 +8,8 @@
 :compileApiJava UP-TO-DATE
 :processApiResources UP-TO-DATE
 :apiClasses UP-TO-DATE
-:sourceMainJava
-:compileJava
+:sourceMainJava UP-TO-DATE
+:compileJava UP-TO-DATE
 :processResources
 :classes
 :jar
@@ -28,4 +28,4 @@
 
 BUILD SUCCESSFUL
 
-Total time: 13.255 secs
+Total time: 11.368 secs

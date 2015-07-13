@@ -6,8 +6,10 @@ import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.EnumHelper;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -30,7 +32,7 @@ public class Thingy
 	@Instance(value="DerpCoin")
 	public static Thingy instance;
     public static final String MODID = "ThingyTest";
-    public static final String VERSION = "0.3.1";
+    public static final String VERSION = "0.4.7";
     
     @SidedProxy(clientSide="FirstMod.Client.ClientProxy", serverSide="FirstMod.Base.CommonProxy")
     public static CommonProxy proxy;
@@ -42,6 +44,11 @@ public class Thingy
     public static MagicClock magicClock;
     public static Item derpIngot;
     public static MagicToggledownfall magicDownfall;
+    public static ArmorMaterial derpArmor = EnumHelper.addArmorMaterial("DerpCoin", 20, new int[]{3, 7, 6, 3} , 25);
+    public static Item derpHelmet;
+    public static Item derpChestplate;
+    public static Item derpLeggings;
+    public static Item derpBoots;
     //TutorialEventHandler events = new TutorialEventHandler();
     
     @EventHandler
@@ -73,6 +80,15 @@ public class Thingy
 		magicClockBackward.setUnlocalizedName("magicClockBackward");
 		magicClockBackward.setMaxStackSize(1);
 		//magicClockBackward.setCreativeTab(derpTab.tabDerpCoin);*/
+		
+		GameRegistry.registerItem(derpHelmet = new DerpArmor("derp_helmet", derpArmor, "DerpArmor", 0), "derp_helmet"); //0 for helmet
+		derpHelmet.setCreativeTab(derpTab.tabDerpCoin);
+		GameRegistry.registerItem(derpChestplate = new DerpArmor("derp_chestplate", derpArmor, "DerpArmor", 1), "derp_chestplate"); // 1 for chestplate
+		derpChestplate.setCreativeTab(derpTab.tabDerpCoin);
+		GameRegistry.registerItem(derpLeggings = new DerpArmor("derp_leggings", derpArmor, "DerpArmor", 2), "derp_leggings"); // 2 for leggings
+		derpLeggings.setCreativeTab(derpTab.tabDerpCoin);
+		GameRegistry.registerItem(derpBoots = new DerpArmor("derp_boots", derpArmor, "DerpArmor", 3), "derp_boots");
+		derpBoots.setCreativeTab(derpTab.tabDerpCoin);
 		
 		magicClock = new MagicClock();
 		GameRegistry.registerItem(magicClock, "magicClock");

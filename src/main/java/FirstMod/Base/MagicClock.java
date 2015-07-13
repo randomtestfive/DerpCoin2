@@ -123,7 +123,7 @@ public class MagicClock extends Item
 	public void onPlayerStoppedUsing(ItemStack par1Stack, World p_77974_1_, EntityPlayer p_77974_2_, int p_77974_3_)
 	{
 		System.out.println("stopclick");
-		getIconFromDamage(par1Stack.getItemDamage());
+		//getIconFromDamage(par1Stack.getItemDamage());
 		System.out.println("stopped using");
 		System.out.println(par1Stack.getItemDamage());
 	}
