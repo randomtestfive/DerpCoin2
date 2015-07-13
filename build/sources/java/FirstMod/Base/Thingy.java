@@ -6,8 +6,10 @@ import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -49,6 +51,8 @@ public class Thingy
     public static Item derpChestplate;
     public static Item derpLeggings;
     public static Item derpBoots;
+    public static ToolMaterial derpMaterial = EnumHelper.addToolMaterial("derpMaterial", 3, 600, 7.0F, 2.5F, 22);
+    public static ItemSword derpSword;
     //TutorialEventHandler events = new TutorialEventHandler();
     
     @EventHandler
@@ -57,6 +61,12 @@ public class Thingy
     	//FMLCommonHandler.instance().bus().register(events);
     	//MinecraftForge.EVENT_BUS.register(events);
 
+    	derpSword = new ItemSword(derpMaterial);
+    	GameRegistry.registerItem(derpSword, "derpSword");
+    	derpSword.setTextureName("derpcoin:derpSword");
+    	derpSword.setCreativeTab(derpTab.tabDerpCoin);
+    	derpSword.setUnlocalizedName("derpSword");
+    	
 		Item magicItem = new MagicItem();
 		GameRegistry.registerItem(magicItem, "magicItem");
 		magicItem.setTextureName("derpcoin:magicItem");
@@ -93,6 +103,8 @@ public class Thingy
 		GameRegistry.registerItem(derpBoots = new DerpArmor("derp_boots", derpArmor, "DerpArmor", 3), "derp_boots");
 		derpBoots.setCreativeTab(derpTab.tabDerpCoin);
 		derpBoots.setTextureName("derpcoin:derpBoots");
+		
+		
 		
 		magicClock = new MagicClock();
 		GameRegistry.registerItem(magicClock, "magicClock");
