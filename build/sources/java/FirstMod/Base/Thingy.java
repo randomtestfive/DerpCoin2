@@ -83,12 +83,16 @@ public class Thingy
 		
 		GameRegistry.registerItem(derpHelmet = new DerpArmor("derp_helmet", derpArmor, "DerpArmor", 0), "derp_helmet"); //0 for helmet
 		derpHelmet.setCreativeTab(derpTab.tabDerpCoin);
+		derpHelmet.setTextureName("derpcoin:derpHelmet");
 		GameRegistry.registerItem(derpChestplate = new DerpArmor("derp_chestplate", derpArmor, "DerpArmor", 1), "derp_chestplate"); // 1 for chestplate
 		derpChestplate.setCreativeTab(derpTab.tabDerpCoin);
+		derpChestplate.setTextureName("derpcoin:derpChestplate");
 		GameRegistry.registerItem(derpLeggings = new DerpArmor("derp_leggings", derpArmor, "DerpArmor", 2), "derp_leggings"); // 2 for leggings
 		derpLeggings.setCreativeTab(derpTab.tabDerpCoin);
+		derpLeggings.setTextureName("derpcoin:derpLeggings");
 		GameRegistry.registerItem(derpBoots = new DerpArmor("derp_boots", derpArmor, "DerpArmor", 3), "derp_boots");
 		derpBoots.setCreativeTab(derpTab.tabDerpCoin);
+		derpBoots.setTextureName("derpcoin:derpBoots");
 		
 		magicClock = new MagicClock();
 		GameRegistry.registerItem(magicClock, "magicClock");
