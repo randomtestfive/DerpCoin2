@@ -13,7 +13,7 @@ public class DerpArmor extends ItemArmor
 	    super(material, 0, type);
 	    this.textureName = textureName;
 	    this.setUnlocalizedName(unlocalizedName);
-	    this.setTextureName(Thingy.MODID + ":" + unlocalizedName);
+	    //this.setTextureName(Thingy.MODID + ":" + unlocalizedName);
 	}
 	
 	@Override

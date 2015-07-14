@@ -1,4 +1,4 @@
-item.genericItem.name=Generic Item
+item.DerpCoin_derpCoin.name=DerpCoin
 item.magicItem.name=Magic Item
 item.derpCoin.name=DerpCoin
 tile.derpCoinBlock.name=DerpCoin Block
@@ -13,3 +13,4 @@ item.derp_helmet.name=DerpCoin Helmet
 item.derp_chestplate.name=DerpCoin Chestplate
 item.derp_leggings.name=DerpCoin Leggings
 item.derp_boots.name=DerpCoin Boots
+item.derpSword.name=DerpCoin Sword

@@ -10,6 +10,6 @@ public class GenericItem extends Item
                 maxStackSize = 64;
                 setCreativeTab(CreativeTabs.tabMisc);
                 setUnlocalizedName("genericItem");
-                setTextureName("thingytest:genericItem");
+                //setTextureName("thingytest:genericItem");
         }
 }

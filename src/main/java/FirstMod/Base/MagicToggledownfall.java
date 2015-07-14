@@ -1,19 +1,17 @@
 package FirstMod.Base;
 
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.command.CommandToggleDownfall;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.WorldInfo;
 
 public class MagicToggledownfall extends Item
 {
-	public IIcon full;
+	/*public IIcon full;
 	public IIcon empty;
 	
 	public MagicToggledownfall()
@@ -76,6 +74,6 @@ public class MagicToggledownfall extends Item
 		 {
 			 par1ItemStack.setItemDamage(1);
 		 }
-	 }
+	 }*/
 	 
 }

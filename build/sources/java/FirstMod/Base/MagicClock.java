@@ -1,18 +1,13 @@
 package FirstMod.Base;
 
-import ibxm.Player;
-import cpw.mods.fml.common.Mod.EventHandler;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
 public class MagicClock extends Item
 {
-	public IIcon forward;
+	/*public IIcon forward;
 	public IIcon backward;
 	//public boolean mode = true;
 	//public boolean clickcooldown = true;
@@ -74,7 +69,7 @@ public class MagicClock extends Item
 		changeTexture(this.mode);
 	}*/
 	
-	@Override
+	/*@Override
 	public ItemStack onItemRightClick(ItemStack par1Stack, World par2World, EntityPlayer par3Player)
 	{
 		System.out.println("rightclick");
@@ -126,6 +121,6 @@ public class MagicClock extends Item
 		//getIconFromDamage(par1Stack.getItemDamage());
 		System.out.println("stopped using");
 		System.out.println(par1Stack.getItemDamage());
-	}
+	}*/
 	
 }

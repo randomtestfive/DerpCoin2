@@ -1,10 +1,6 @@
 package FirstMod.Base;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntitySnowball;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -39,10 +35,10 @@ public class MagicItem extends Item
 		 return par1ItemStack;
 	 }
 	 
-	 @Override
-	 public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int x, int y, int z, int side, float px, float py, float pz)
+	 //@Override
+	 /*public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int x, int y, int z, int side, float px, float py, float pz)
 	 {
 		 System.out.println("USE");
 		 return true;
-	 }
+	 }*/
 }
