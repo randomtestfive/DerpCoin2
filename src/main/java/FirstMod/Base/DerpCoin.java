@@ -12,7 +12,7 @@ public class DerpCoin extends Item
 	{
 		GameRegistry.registerItem(this, name);
 		setUnlocalizedName("derpcoin" + "_" + name);
-		setCreativeTab(derpTab.tabDerpCoin);
+		
 	}
 	
 	public String getName()

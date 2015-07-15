@@ -14,7 +14,7 @@ public class MagicToggledownfall extends Item
 	
 	public MagicToggledownfall()
 	{
-		this.setCreativeTab(derpTab.tabDerpCoin);
+		
 		this.setMaxStackSize(1);
 		this.setUnlocalizedName("magicDownfall");
 	}

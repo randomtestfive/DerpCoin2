@@ -9,7 +9,7 @@ public class DerpPickaxe extends ItemPickaxe
 	{
 		super(p_i45347_1_);
     	GameRegistry.registerItem(this, "derpPickaxe");
-    	setCreativeTab(derpTab.tabDerpCoin);
+    	
     	setUnlocalizedName("derpPickaxe");
 	}	
 }

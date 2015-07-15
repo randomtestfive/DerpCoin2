@@ -58,7 +58,7 @@ public class Thingy
 
     	derpSword = new ItemSword(derpMaterial);
     	GameRegistry.registerItem(derpSword, "derpSword");
-    	derpSword.setCreativeTab(derpTab.tabDerpCoin);
+    	
     	derpSword.setUnlocalizedName("derpSword");
     	
     	derpPickaxe = new DerpPickaxe(derpMaterial);
@@ -68,21 +68,19 @@ public class Thingy
 		GameRegistry.registerItem(magicItem, "magicItem");
 		magicItem.setUnlocalizedName("magicItem");
 		magicItem.setMaxStackSize(1);
-		magicItem.setCreativeTab(derpTab.tabDerpCoin);
+		
 		
 		magicDownfall = new MagicToggledownfall();
 		GameRegistry.registerItem(magicDownfall, "MagicDownfall");
 		
 		
 		GameRegistry.registerItem(derpHelmet = new DerpArmor("derpHelmet", derpArmor, 1, 0), "derp_helmet"); //0 for helmet
-		derpHelmet.setCreativeTab(derpTab.tabDerpCoin);
-		GameRegistry.registerItem(derpChestplate = new DerpArmor("derpChestplate", derpArmor, 1, 1), "derp_chestplate"); // 1 for chestplate
-		derpChestplate.setCreativeTab(derpTab.tabDerpCoin);
-		GameRegistry.registerItem(derpLeggings = new DerpArmor("derpLeggings", derpArmor, 2, 2), "derp_leggings"); // 2 for leggings
-		derpLeggings.setCreativeTab(derpTab.tabDerpCoin);
-		GameRegistry.registerItem(derpBoots = new DerpArmor("derpBoots", derpArmor, 1, 3), "derp_boots");
-		derpBoots.setCreativeTab(derpTab.tabDerpCoin);
 		
+		GameRegistry.registerItem(derpChestplate = new DerpArmor("derpChestplate", derpArmor, 1, 1), "derp_chestplate"); // 1 for chestplate
+		
+		GameRegistry.registerItem(derpLeggings = new DerpArmor("derpLeggings", derpArmor, 2, 2), "derp_leggings"); // 2 for leggings
+		
+		GameRegistry.registerItem(derpBoots = new DerpArmor("derpBoots", derpArmor, 1, 3), "derp_boots");
 		
 		
 		magicClock = new MagicClock();
@@ -91,13 +89,11 @@ public class Thingy
 		
 		derpIngot = new GenericItem();
 		derpIngot.setUnlocalizedName("derpIngot");
-		derpIngot.setCreativeTab(derpTab.tabDerpCoin);
 		GameRegistry.registerItem(derpIngot, "derpIngot");
 		
 		derpCoinBlock = new GenericBlock(Material.iron);
 		derpCoinBlock.setHardness(1.0f);
 		derpCoinBlock.setUnlocalizedName("derpCoinBlock");
-		derpCoinBlock.setCreativeTab(derpTab.tabDerpCoin);
 		derpCoinBlock.setStepSound(Block.soundTypeMetal);
 		GameRegistry.registerBlock(derpCoinBlock, "derpCoinBlock");
 		
@@ -139,5 +135,21 @@ public class Thingy
     		renderItem.getItemModelMesher().register(derpIngot, 0, new ModelResourceLocation("derpcoin:" + "derpIngot", "inventory"));
     		renderItem.getItemModelMesher().register(Item.getItemFromBlock(derpCoinBlock), 0, new ModelResourceLocation("derpcoin:" + "derpCoinBlock", "inventory"));
     	}
+    }
+    
+    public void setupDerpTab()
+    {
+    	derpCoin.setCreativeTab(derpTab.tabDerpCoin);
+    	derpIngot.setCreativeTab(derpTab.tabDerpCoin);
+    	derpCoinBlock.setCreativeTab(derpTab.tabDerpCoin);
+    	derpSword.setCreativeTab(derpTab.tabDerpCoin);
+    	derpPickaxe.setCreativeTab(derpTab.tabDerpCoin);
+    	derpHelmet.setCreativeTab(derpTab.tabDerpCoin);
+    	derpChestplate.setCreativeTab(derpTab.tabDerpCoin);
+    	derpLeggings.setCreativeTab(derpTab.tabDerpCoin);
+    	derpBoots.setCreativeTab(derpTab.tabDerpCoin);
+    	magicItem.setCreativeTab(derpTab.tabDerpCoin);
+    	magicClock.setCreativeTab(derpTab.tabDerpCoin);
+    	magicDownfall.setCreativeTab(derpTab.tabDerpCoin);
     }
 }
