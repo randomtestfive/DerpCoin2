@@ -1,25 +1,40 @@
 package FirstMod.Base;
 
+import java.util.List;
+
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class MagicClock extends Item
 {
-	/*public IIcon forward;
-	public IIcon backward;
-	//public boolean mode = true;
-	//public boolean clickcooldown = true;
+	private final String name = "magicClock";
 	
 	public MagicClock()
 	{
-		Item magicClock = new Item();
-		//this.mode = true;
-		this.itemIcon = forward;
+		super();
+		GameRegistry.registerItem(this, name);
+		setUnlocalizedName("derpcoin" + "_" + name);
+		setCreativeTab(derpTab.tabDerpCoin);
+        //this.setHasSubtypes(true);
+		setMaxStackSize(1);
 	}
 	
-	@Override
+	public String getName()
+	{
+		return name;
+	}
+	//public IIcon forward;
+	//public IIcon backward;
+	//public boolean mode = true;
+	//public boolean clickcooldown = true;
+	
+
+	
+	/*@Override
 	public void registerIcons(IIconRegister iconRegister)
 	{
 		this.forward = iconRegister.registerIcon("derpcoin:magicClockForward");
@@ -42,7 +57,7 @@ public class MagicClock extends Item
 		{
 			return forward;
 		}
-	}
+	}*/
 	
 	@Override
 	public void onCreated(ItemStack par1Item, World par2World, EntityPlayer par3Player)
@@ -62,6 +77,13 @@ public class MagicClock extends Item
 		}
 	}
 	
+	//@Override
+	/*public void getSubItems(Item itemIn, CreativeTabs tab, List subItems) 
+	{
+	    subItems.add(new ItemStack(itemIn, 1, 0));
+	    subItems.add(new ItemStack(itemIn, 1, 1));
+	}*/
+	
 	/*@Override
 	public void onCreated(ItemStack p_77622_1_, World p_77622_2_, EntityPlayer p_77622_3_) 
 	{
@@ -69,7 +91,7 @@ public class MagicClock extends Item
 		changeTexture(this.mode);
 	}*/
 	
-	/*@Override
+	@Override
 	public ItemStack onItemRightClick(ItemStack par1Stack, World par2World, EntityPlayer par3Player)
 	{
 		System.out.println("rightclick");
@@ -89,7 +111,7 @@ public class MagicClock extends Item
 					par1Stack.setItemDamage(0);
 					System.out.println("went to 1");
 				}
-				getIconFromDamage(par1Stack.getItemDamage());
+				//getIconFromDamage(par1Stack.getItemDamage());
 				System.out.println("started using");
 				return Output;
 		}
@@ -121,6 +143,6 @@ public class MagicClock extends Item
 		//getIconFromDamage(par1Stack.getItemDamage());
 		System.out.println("stopped using");
 		System.out.println(par1Stack.getItemDamage());
-	}*/
+	}
 	
 }

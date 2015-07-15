@@ -11,41 +11,14 @@ import net.minecraft.world.storage.WorldInfo;
 
 public class MagicToggledownfall extends Item
 {
-	/*public IIcon full;
-	public IIcon empty;
 	
 	public MagicToggledownfall()
 	{
 		this.setCreativeTab(derpTab.tabDerpCoin);
 		this.setMaxStackSize(1);
 		this.setUnlocalizedName("magicDownfall");
-		this.itemIcon = empty;
 	}
 	
-	@Override
-	public void registerIcons(IIconRegister iconRegister)
-	{
-		this.full = iconRegister.registerIcon("derpcoin:magictogglefull");
-		this.empty = iconRegister.registerIcon("derpcoin:magictoggleempty");
-		
-	}
-	
-	@Override
-	public IIcon getIconFromDamage(int meta) 
-	{
-		if (meta == 0)
-		{
-			return full;
-		}
-		else if(meta == 1)
-		{
-			return empty;
-		}
-		else
-		{
-			return empty;
-		}
-	}
 	
 	 public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,EntityPlayer par3EntityPlayer) 
 	 {
@@ -74,6 +47,6 @@ public class MagicToggledownfall extends Item
 		 {
 			 par1ItemStack.setItemDamage(1);
 		 }
-	 }*/
+	 }
 	 
 }

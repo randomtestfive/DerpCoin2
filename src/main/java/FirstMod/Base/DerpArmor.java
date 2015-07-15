@@ -6,19 +6,20 @@ import net.minecraft.item.ItemStack;
 
 public class DerpArmor extends ItemArmor 
 {
-	public String textureName;
+	public String textureName = "derpArmor";
 	
-	public DerpArmor(String unlocalizedName, ArmorMaterial material, String textureName, int type) 
-	{
-	    super(material, 0, type);
-	    this.textureName = textureName;
-	    this.setUnlocalizedName(unlocalizedName);
-	    //this.setTextureName(Thingy.MODID + ":" + unlocalizedName);
-	}
+    
+	public DerpArmor(String unlocalizedName, ArmorMaterial material, int renderIndex, int armorType)
+    {
+        super(material, renderIndex, armorType);
+        //this.textureName = unlocalizedName;
+        this.setUnlocalizedName(unlocalizedName);
+    }
 	
-	@Override
+	/*@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
 	{
-	    return "derpcoin:textures/armor/" + this.textureName + "_" + (this.armorType == 2 ? "2" : "1") + ".png";
-	}
+		String location = "derpcoin:assets/derpcoin/textures/armor/" + stack.getUnlocalizedName().substring(5) +".png";
+		return location;
+	}*/
 }

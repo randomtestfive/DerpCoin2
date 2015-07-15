@@ -1,7 +1,7 @@
 {
 	"parent": "builtin/generated",
 	"textures": {
-		"layer0": "derpcoin:items/derpPickaxe"
+		"layer0": "derpcoin:items/derpIngot"
 	},
 	"display": {
 		"thirdperson": {
