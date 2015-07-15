@@ -14,7 +14,6 @@ public class MagicToggledownfall extends Item
 	
 	public MagicToggledownfall()
 	{
-		
 		this.setMaxStackSize(1);
 		this.setUnlocalizedName("magicDownfall");
 	}

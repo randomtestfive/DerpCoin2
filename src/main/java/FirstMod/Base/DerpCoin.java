@@ -10,7 +10,6 @@ public class DerpCoin extends Item
 	
 	public DerpCoin()
 	{
-		GameRegistry.registerItem(this, name);
 		setUnlocalizedName("derpcoin" + "_" + name);
 		
 	}

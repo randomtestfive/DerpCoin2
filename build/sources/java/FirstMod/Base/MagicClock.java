@@ -16,9 +16,9 @@ public class MagicClock extends Item
 	public MagicClock()
 	{
 		super();
-		GameRegistry.registerItem(this, name);
+		
 		setUnlocalizedName("derpcoin" + "_" + name);
-		setCreativeTab(derpTab.tabDerpCoin);
+		
         //this.setHasSubtypes(true);
 		setMaxStackSize(1);
 	}
