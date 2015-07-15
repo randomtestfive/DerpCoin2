@@ -97,6 +97,8 @@ public class Thingy
 		derpCoinBlock.setStepSound(Block.soundTypeMetal);
 		GameRegistry.registerBlock(derpCoinBlock, "derpCoinBlock");
 		
+		setupDerpTab();
+		
 		ItemStack derpCoinStack = new ItemStack(derpCoin);
 		ItemStack diamondStack = new ItemStack(Items.diamond);
 		GameRegistry.addRecipe(new ItemStack(magicItem)," X ", "XYX", " X ", 'X', derpCoinStack, 'Y', diamondStack);
