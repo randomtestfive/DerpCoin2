@@ -38,9 +38,9 @@ public class Thingy
     public static CommonProxy proxy;
     public static ClientProxy client;
     public static DerpCoin derpCoin;
+    public static Item derpIngot;
     public static Block derpCoinBlock;
     public static MagicClock magicClock;
-    public static Item derpIngot;
     public static MagicToggledownfall magicDownfall;
     public static ArmorMaterial derpArmor = EnumHelper.addArmorMaterial("derpArmor", "derpcoin:derpArmor", 20, new int[]{3, 7, 6, 3} , 25);
     public static DerpArmor derpHelmet;
