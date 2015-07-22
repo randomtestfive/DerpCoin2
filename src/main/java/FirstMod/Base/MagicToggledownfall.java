@@ -29,7 +29,9 @@ public class MagicToggledownfall extends Item
 			 if(par3EntityPlayer.capabilities.isCreativeMode||par3EntityPlayer.inventory.consumeInventoryItem(Thingy.derpCoin))
 			 {
 				 WorldInfo worldinfo = MinecraftServer.getServer().worldServers[0].getWorldInfo();
-				 worldinfo.setRaining(!worldinfo.isRaining());
+				 //worldinfo.setRaining(!worldinfo.isRaining());
+				 boolean IsRaining = !par2World.isRaining();
+				 worldinfo.setRaining(IsRaining);
 			 }		 
 		 }
 		 return par1ItemStack;
