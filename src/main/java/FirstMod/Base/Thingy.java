@@ -101,6 +101,14 @@ public class Thingy
 		GameRegistry.addRecipe(new ItemStack(derpCoinBlock), "XXX", "XXX", "XXX", 'X', new ItemStack(derpIngot));
 		GameRegistry.addRecipe(new ItemStack(derpIngot), "XXX", "XXX", "XXX", 'X', new ItemStack(derpCoin));
 		GameRegistry.addRecipe(new ItemStack(magicClock), " X ", "XYX", " X ", 'X', new ItemStack(magicItem), 'Y', new ItemStack(Items.clock));
+		GameRegistry.addRecipe(new ItemStack(derpHelmet), "   ", "XXX", "X X", 'X', new ItemStack(derpIngot));
+		GameRegistry.addRecipe(new ItemStack(derpHelmet), "XXX", "X X", "   ", 'X', new ItemStack(derpIngot));
+		GameRegistry.addRecipe(new ItemStack(derpChestplate), "X X", "XXX", "XXX", 'X', new ItemStack(derpIngot));
+		GameRegistry.addRecipe(new ItemStack(derpLeggings), "XXX", "X X", "X X", 'X', new ItemStack(derpIngot));
+		GameRegistry.addRecipe(new ItemStack(derpBoots), "X X", "X X", "   ", 'X', new ItemStack(derpIngot));
+		GameRegistry.addRecipe(new ItemStack(derpBoots), "   ", "X X", "X X", 'X', new ItemStack(derpIngot));
+		GameRegistry.addRecipe(new ItemStack(derpSword), " X ", " X ", " Y ", 'X', new ItemStack(derpIngot), 'Y', new ItemStack(Items.stick));
+		GameRegistry.addRecipe(new ItemStack(derpPickaxe), "XXX", " Y ", " Y ", 'X', new ItemStack(derpIngot), 'Y', new ItemStack(Items.stick));
 		GameRegistry.addShapelessRecipe(new ItemStack(derpIngot, 9), new ItemStack(derpCoinBlock, 1));
 		GameRegistry.addShapelessRecipe(new ItemStack(derpCoin, 9), new ItemStack(derpIngot, 1));
 		GameRegistry.addSmelting(Items.gold_nugget, new ItemStack(derpCoin), 0.2f);
