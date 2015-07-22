@@ -112,7 +112,7 @@ public class Thingy
 		GameRegistry.addShapelessRecipe(new ItemStack(derpIngot, 9), new ItemStack(derpCoinBlock, 1));
 		GameRegistry.addShapelessRecipe(new ItemStack(derpCoin, 9), new ItemStack(derpIngot, 1));
 		GameRegistry.addSmelting(Items.gold_nugget, new ItemStack(derpCoin), 0.2f);
-		RenderingRegistry.registerEntityRenderingHandler(DerpCoinProjectile.class, new RenderSnowball(null, derpCoin, null));
+		RenderingRegistry.registerEntityRenderingHandler(DerpCoinProjectile.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), derpCoin, Minecraft.getMinecraft().getRenderItem()));
 		System.out.println("Everything loaded...");
     }
     

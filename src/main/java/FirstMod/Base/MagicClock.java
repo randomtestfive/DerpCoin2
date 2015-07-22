@@ -121,13 +121,13 @@ public class MagicClock extends Item
 			{
 				if(par1Stack.getItemDamage() == 0)
 				{
+					//par3Player.setItemInUse(par1Stack, 100);
 					par2World.setWorldTime(par2World.getWorldTime() + 1000);
-					
 				}
 				else
 				{
+					//par3Player.setItemInUse(par1Stack, 100);
 					par2World.setWorldTime(par2World.getWorldTime() - 1000);
-					
 				}
 			}
 		}
