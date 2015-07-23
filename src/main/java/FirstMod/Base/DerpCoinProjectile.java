@@ -1,13 +1,18 @@
 package FirstMod.Base;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
 public class DerpCoinProjectile extends EntityThrowable
 {
+	
 	private int ticksAlive = 0;
 	public static float explosionRadius = 2.0F;
 	
@@ -27,11 +32,14 @@ public class DerpCoinProjectile extends EntityThrowable
     @Override
     public void onUpdate()
     {
+    	super.onUpdate();
     	if(!field_174854_a)
     	{
     		++ticksAlive;
-    		if(ticksAlive >= 50000)
+    		if(ticksAlive >= 200)
     		{
+    			this.dropItem(Thingy.derpCoin, 1);
+				//this.worldObj.spawnEntityInWorld(new EntityItem(this.worldObj, this.posX, this.posY, this.posZ, new ItemStack(Thingy.derpCoin)));
     			this.setDead();
     		}
     	}
@@ -42,7 +50,7 @@ public class DerpCoinProjectile extends EntityThrowable
     	System.out.println(ticksAlive);
     }
     
-    @Override
+	@Override
     protected void onImpact(MovingObjectPosition par1MovingObjectPosition)
     {
     	MinecraftServer.getServer().worldServerForDimension(this.dimension).playSoundAtEntity(this, "random.bow", 2.0F, 1.0F);

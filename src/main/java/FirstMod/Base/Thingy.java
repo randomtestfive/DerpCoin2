@@ -27,6 +27,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import FirstMod.Client.ClientProxy;
 
+
+
 @Mod(modid = "DerpCoin", version = Thingy.VERSION)
 public class Thingy
 {
