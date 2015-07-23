@@ -132,7 +132,7 @@ public class MagicClock extends Item
 			}
 		}
 		System.out.println(par1Stack.getItemDamage());
-		//par3Player.setItemInUse(par1Stack, 10);
+		//par3Player.setItemInUse(par1Stack, 20);
 		return Output;
 	}
 	
