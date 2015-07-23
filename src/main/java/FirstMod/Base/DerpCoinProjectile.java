@@ -8,6 +8,7 @@ import net.minecraft.world.World;
 
 public class DerpCoinProjectile extends EntityThrowable
 {
+	private int ticksAlive = 0;
 	public static float explosionRadius = 2.0F;
 	
     public DerpCoinProjectile(World par1World)
@@ -21,6 +22,24 @@ public class DerpCoinProjectile extends EntityThrowable
     public DerpCoinProjectile(World par1World, double par2, double par4, double par6)
     {
         super(par1World, par2, par4, par6);
+    }
+    
+    @Override
+    public void onUpdate()
+    {
+    	if(!field_174854_a)
+    	{
+    		++ticksAlive;
+    		if(ticksAlive >= 50000)
+    		{
+    			this.setDead();
+    		}
+    	}
+    	else
+    	{
+    		ticksAlive = 0;
+    	}
+    	System.out.println(ticksAlive);
     }
     
     @Override
