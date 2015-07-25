@@ -23,6 +23,7 @@ import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import FirstMod.Client.ClientProxy;
@@ -37,7 +38,7 @@ public class Thingy
     public static final String MODID = "ThingyTest";
     public static final String VERSION = "0.4.7";
     
-    @SidedProxy(clientSide="FirstMod.Client.ClientProxy", serverSide="FirstMod.Base.CommonProxy")
+    @SidedProxy(clientSide="FirstMod.Client.ClientProxy", serverSide="FirstMod.Server.ServerProxy")
     public static CommonProxy proxy;
     public static ClientProxy client;
     public static DerpCoin derpCoin;
@@ -67,6 +68,7 @@ public class Thingy
     	
     	derpPickaxe = new DerpPickaxe(derpMaterial);
 
+    	client.registerRenderers();
     	
 		magicItem = new MagicItem();
 
@@ -96,6 +98,8 @@ public class Thingy
 		
 		registerItems();
 		setupDerpTab();
+		 
+		//EntityRegistry.registerModEntity(DerpCoinProjectile.class, "MyEntity", 1, this, 350, 5, false );
 		
 		ItemStack derpCoinStack = new ItemStack(derpCoin);
 		ItemStack diamondStack = new ItemStack(Items.diamond);
@@ -120,7 +124,7 @@ public class Thingy
     @EventHandler
     public void Init(FMLInitializationEvent event)
     {
-    	RenderingRegistry.registerEntityRenderingHandler(DerpCoinProjectile.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), derpCoin, Minecraft.getMinecraft().getRenderItem()));
+    	//RenderingRegistry.registerEntityRenderingHandler(DerpCoinProjectile.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), derpCoin, Minecraft.getMinecraft().getRenderItem()));
     	ModelBakery.addVariantName(magicClock, "derpcoin:magicClockBackward", "derpcoin:magicClockForward");
     	ModelBakery.addVariantName(magicDownfall, "derpcoin:magicDownfallFull", "derpcoin:magicDownfallEmpty");
     	

@@ -38,7 +38,10 @@ public class DerpCoinProjectile extends EntityThrowable
     		++ticksAlive;
     		if(ticksAlive >= 200)
     		{
-    			this.entityDropItem(new ItemStack(Thingy.derpCoin), 0.0F);
+    			if(!this.worldObj.isRemote)
+    			{
+    				this.entityDropItem(new ItemStack(Thingy.derpCoin, 1), 0.0F);
+    			}
     			//this.dropItem(Thingy.derpCoin, 1);
     			//this.worldObj.spawnEntityInWorld(new EntityItem(this.worldObj, this.posX, this.posY, this.posZ, new ItemStack(Thingy.derpCoin)));
     			this.setDead();
@@ -48,13 +51,13 @@ public class DerpCoinProjectile extends EntityThrowable
     	{
     		ticksAlive = 0;
     	}
-    	System.out.println(ticksAlive);
+    	//System.out.println(ticksAlive);
     }
     
 	@Override
     protected void onImpact(MovingObjectPosition par1MovingObjectPosition)
     {
-    	MinecraftServer.getServer().worldServerForDimension(this.dimension).playSoundAtEntity(this, "random.bow", 2.0F, 1.0F);
+    	//MinecraftServer.getServer().worldServerForDimension(this.dimension).playSoundAtEntity(this, "random.bow", 2.0F, 1.0F);
     	MinecraftServer.getServer().worldServerForDimension(this.dimension).createExplosion(this, this.posX, this.posY, this.posZ,  (float)(this.explosionRadius), true);
     	if (!MinecraftServer.getServer().worldServerForDimension(this.dimension).isRemote)
     	{
