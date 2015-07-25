@@ -38,7 +38,7 @@ public class Thingy
     public static final String MODID = "ThingyTest";
     public static final String VERSION = "0.4.7";
     
-    @SidedProxy(clientSide="FirstMod.Client.ClientProxy", serverSide="FirstMod.Server.ServerProxy")
+    @SidedProxy(clientSide="FirstMod.Client.ClientProxy", serverSide="CommonProxy")
     public static CommonProxy proxy;
     public static ClientProxy client;
     public static DerpCoin derpCoin;
@@ -68,7 +68,7 @@ public class Thingy
     	
     	derpPickaxe = new DerpPickaxe(derpMaterial);
 
-    	client.registerRenderers();
+    	//client.registerRenderers();
     	
 		magicItem = new MagicItem();
 
