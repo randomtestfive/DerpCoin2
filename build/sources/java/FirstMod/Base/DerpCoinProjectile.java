@@ -38,7 +38,8 @@ public class DerpCoinProjectile extends EntityThrowable
     		++ticksAlive;
     		if(ticksAlive >= 200)
     		{
-    			this.dropItem(Thingy.derpCoin, 1);
+    			this.entityDropItem(new ItemStack(Thingy.derpCoin), 0.0F);
+    			//this.dropItem(Thingy.derpCoin, 1);
 				//this.worldObj.spawnEntityInWorld(new EntityItem(this.worldObj, this.posX, this.posY, this.posZ, new ItemStack(Thingy.derpCoin)));
     			this.setDead();
     		}
