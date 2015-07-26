@@ -23,6 +23,7 @@ import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -37,6 +38,7 @@ public class Thingy
 	public static Thingy instance;
     public static final String MODID = "ThingyTest";
     public static final String VERSION = "0.4.7";
+    
     
     @SidedProxy(clientSide="FirstMod.Client.ClientProxy", serverSide="CommonProxy")
     public static CommonProxy proxy;
@@ -56,6 +58,7 @@ public class Thingy
     public static DerpPickaxe derpPickaxe;
     public static MagicItem magicItem;
     public static Item derpCoinU;
+    public static DerpBackpack derpBackpack;
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
@@ -82,7 +85,8 @@ public class Thingy
 		derpCoinU = new Item();
 		derpCoinU.setUnlocalizedName("derpCoinU");
 
-		
+		derpBackpack = new DerpBackpack();
+		derpBackpack.setUnlocalizedName("derpBackpack");
 		
 		magicClock = new MagicClock();
     	
@@ -125,6 +129,7 @@ public class Thingy
     @EventHandler
     public void Init(FMLInitializationEvent event)
     {
+    	NetworkRegistry.INSTANCE.registerGuiHandler(this, new GUIHandler());
     	this.proxy.init(event);
     	//RenderingRegistry.registerEntityRenderingHandler(DerpCoinProjectile.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), derpCoin, Minecraft.getMinecraft().getRenderItem()));
     	ModelBakery.addVariantName(magicClock, "derpcoin:magicClockBackward", "derpcoin:magicClockForward");
@@ -148,6 +153,7 @@ public class Thingy
     		renderItem.getItemModelMesher().register(magicItem, 0, new ModelResourceLocation("derpcoin:" + "magicItem", "inventory"));
     		renderItem.getItemModelMesher().register(derpIngot, 0, new ModelResourceLocation("derpcoin:" + "derpIngot", "inventory"));
     		renderItem.getItemModelMesher().register(derpCoinU, 0, new ModelResourceLocation("derpcoin:derpCoinU", "inventory"));
+    		renderItem.getItemModelMesher().register(derpBackpack, 0, new ModelResourceLocation("derpcoin:derpBackpack", "inventory"));
     		renderItem.getItemModelMesher().register(Item.getItemFromBlock(derpCoinBlock), 0, new ModelResourceLocation("derpcoin:" + "derpCoinBlock", "inventory"));
     	}
     }
@@ -167,6 +173,7 @@ public class Thingy
 		GameRegistry.registerItem(magicClock, "magicClock");
 		GameRegistry.registerItem(magicDownfall, "MagicDownfall");
 		GameRegistry.registerItem(derpCoinU, "derpCoinU");
+		GameRegistry.registerItem(derpBackpack, "derpBackpack");
     }
     
     public void setupDerpTab()
@@ -183,5 +190,6 @@ public class Thingy
     	magicItem.setCreativeTab(derpTab.tabDerpCoin);
     	magicClock.setCreativeTab(derpTab.tabDerpCoin);
     	magicDownfall.setCreativeTab(derpTab.tabDerpCoin);
+    	derpBackpack.setCreativeTab(derpTab.tabDerpCoin);
     }
 }

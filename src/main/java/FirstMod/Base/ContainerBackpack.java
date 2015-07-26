@@ -1,0 +1,17 @@
+package FirstMod.Base;
+
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.Container;
+
+public class ContainerBackpack extends Container
+{
+	
+	public boolean updateState;
+
+	@Override
+	public boolean canInteractWith(EntityPlayer playerIn)
+	{
+		return false;
+	}
+
+}
