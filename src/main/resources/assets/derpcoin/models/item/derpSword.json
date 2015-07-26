@@ -6,7 +6,7 @@
 	"display": {
 		"thirdperson": {
 			"rotation": [0, 90, -35],
-			"translation": [2, 1.25, -3.5],
+			"translation": [0, 3, -2],
 			"scale": [2.00, 2.00, 2.00 ]
 		},
 		"firstperson": {
