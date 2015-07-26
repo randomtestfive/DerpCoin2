@@ -60,7 +60,7 @@ public class Thingy
     public void preInit(FMLPreInitializationEvent event)
     {
     	
-
+    	
     	derpSword = new ItemSword(derpMaterial);
     	
     	
