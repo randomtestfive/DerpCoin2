@@ -55,6 +55,7 @@ public class Thingy
     public static ItemSword derpSword;
     public static DerpPickaxe derpPickaxe;
     public static MagicItem magicItem;
+    public static Item derpCoinU;
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
@@ -78,8 +79,8 @@ public class Thingy
 		
 		magicDownfall = new MagicToggledownfall();
 
-		
-		
+		derpCoinU = new Item();
+		derpCoinU.setUnlocalizedName("derpCoinU");
 
 		
 		
@@ -146,6 +147,7 @@ public class Thingy
     		renderItem.getItemModelMesher().register(derpBoots, 0, new ModelResourceLocation("derpcoin:" + "derp_boots", "inventory"));
     		renderItem.getItemModelMesher().register(magicItem, 0, new ModelResourceLocation("derpcoin:" + "magicItem", "inventory"));
     		renderItem.getItemModelMesher().register(derpIngot, 0, new ModelResourceLocation("derpcoin:" + "derpIngot", "inventory"));
+    		renderItem.getItemModelMesher().register(derpCoinU, 0, new ModelResourceLocation("derpcoin:derpCoinU", "inventory"));
     		renderItem.getItemModelMesher().register(Item.getItemFromBlock(derpCoinBlock), 0, new ModelResourceLocation("derpcoin:" + "derpCoinBlock", "inventory"));
     	}
     }
@@ -164,6 +166,7 @@ public class Thingy
 		GameRegistry.registerItem(magicItem, "magicItem");
 		GameRegistry.registerItem(magicClock, "magicClock");
 		GameRegistry.registerItem(magicDownfall, "MagicDownfall");
+		GameRegistry.registerItem(derpCoinU, "derpCoinU");
     }
     
     public void setupDerpTab()
