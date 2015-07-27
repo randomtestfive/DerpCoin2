@@ -45,7 +45,8 @@ public class DerpBackpack extends Item
 			ContainerBackpack backpack = (ContainerBackpack) par3EntityPlayer.openContainer;
 			if(backpack.updateState)
 			{
-				
+				backpack.saveToNBT(stack);
+				backpack.updateState = false;
 			}
 		}
 	}
