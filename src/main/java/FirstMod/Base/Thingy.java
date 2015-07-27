@@ -58,7 +58,7 @@ public class Thingy
     public static DerpPickaxe derpPickaxe;
     public static MagicItem magicItem;
     public static Item derpCoinU;
-    public static DerpBackpack derpBackpack;
+    //public static DerpBackpack derpBackpack;
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
