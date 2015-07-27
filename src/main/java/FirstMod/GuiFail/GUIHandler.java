@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.network.IGuiHandler;
 public class GUIHandler implements IGuiHandler 
 {
 	
-	private ItemStack derpBackpack = new ItemStack(Thingy.derpBackpack);
+	//private ItemStack derpBackpack = new ItemStack(Thingy.derpBackpack);
 
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) 
@@ -23,9 +23,9 @@ public class GUIHandler implements IGuiHandler
 			switch(ID)
 			{
 				case References.GUI_BACKPACK:
-					if(heldItem == derpBackpack)
+					//if(heldItem == derpBackpack)
 					{
-						return new ContainerDerpBackpack(player.inventory, heldItem);
+						//return new ContainerDerpBackpack(player.inventory, heldItem);
 					}
 					break;
 			}
@@ -42,11 +42,11 @@ public class GUIHandler implements IGuiHandler
 			switch(ID)
 			{
 				case References.GUI_BACKPACK:
-					if(heldItem == derpBackpack)
+					//if(heldItem == derpBackpack)
 					{
-						return new GuiDerpBackpack(player.inventory, heldItem);
+						//return new GuiDerpBackpack(player.inventory, heldItem);
 					}
-					break;
+					//break;
 			}
 		}
 		return null;
