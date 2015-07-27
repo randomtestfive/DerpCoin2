@@ -1,4 +1,4 @@
-package FirstMod.Base;
+package FirstMod.GuiFail;
 
 public class References 
 {

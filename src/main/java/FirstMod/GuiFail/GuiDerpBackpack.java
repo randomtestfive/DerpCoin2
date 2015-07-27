@@ -1,5 +1,6 @@
-package FirstMod.Base;
+package FirstMod.GuiFail;
 
+import FirstMod.Base.Thingy;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;

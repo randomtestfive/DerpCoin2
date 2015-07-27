@@ -1,5 +1,6 @@
-package FirstMod.Base;
+package FirstMod.GuiFail;
 
+import FirstMod.Base.InventoryBackpack;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.item.ItemStack;
