@@ -32,6 +32,8 @@ public class MagicItem extends Item
 				 par2World.spawnEntityInWorld(new DerpCoinProjectile(par2World, par3EntityPlayer));
 				 
 			 }
+			 
+			 //par3EntityPlayer.getInventory().;
 	
 		 return par1ItemStack;
 	 }

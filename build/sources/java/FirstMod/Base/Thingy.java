@@ -58,6 +58,7 @@ public class Thingy
     public static DerpPickaxe derpPickaxe;
     public static MagicItem magicItem;
     public static Item derpCoinU;
+    public static DerpSack derpSack;
     //public static DerpBackpack derpBackpack;
     
     @EventHandler
@@ -87,6 +88,8 @@ public class Thingy
 
 		//derpBackpack = new DerpBackpack();
 		//derpBackpack.setUnlocalizedName("derpBackpack");
+		derpSack = new DerpSack();
+		derpSack.setUnlocalizedName("derpSack");
 		
 		magicClock = new MagicClock();
     	
@@ -172,6 +175,7 @@ public class Thingy
 		GameRegistry.registerItem(magicItem, "magicItem");
 		GameRegistry.registerItem(magicClock, "magicClock");
 		GameRegistry.registerItem(magicDownfall, "MagicDownfall");
+		GameRegistry.registerItem(derpSack, "derpSack");
 		GameRegistry.registerItem(derpCoinU, "derpCoinU");
 		//GameRegistry.registerItem(derpBackpack, "derpBackpack");
     }
@@ -190,6 +194,7 @@ public class Thingy
     	magicItem.setCreativeTab(derpTab.tabDerpCoin);
     	magicClock.setCreativeTab(derpTab.tabDerpCoin);
     	magicDownfall.setCreativeTab(derpTab.tabDerpCoin);
+    	derpSack.setCreativeTab(derpTab.tabDerpCoin);
     	//derpBackpack.setCreativeTab(derpTab.tabDerpCoin);
     }
 }
