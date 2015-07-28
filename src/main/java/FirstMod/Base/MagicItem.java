@@ -1,8 +1,10 @@
 package FirstMod.Base;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
 public class MagicItem extends Item
@@ -22,7 +24,7 @@ public class MagicItem extends Item
 			 //par2World.setWorldTime(0);
 			 //par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 0.5F, 0.4F);
 			 par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 1F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
-			 if(par3EntityPlayer.capabilities.isCreativeMode||par3EntityPlayer.inventory.consumeInventoryItem(Thingy.derpCoin))
+			 if(par3EntityPlayer.capabilities.isCreativeMode || subDerpsack(par3EntityPlayer.inventory) || par3EntityPlayer.inventory.consumeInventoryItem(Thingy.derpCoin))
 			 {
 				 /*if (!par2World.isRemote)
 				 {
@@ -38,6 +40,30 @@ public class MagicItem extends Item
 		 return par1ItemStack;
 	 }
 	 
+	 public static boolean subDerpsack(InventoryPlayer inventory) 
+	 {
+		ItemStack itemstack = null;
+		for (ItemStack s : inventory.mainInventory)
+		{
+			if (s != null && s.getItem() instanceof DerpSack) 
+			{
+				itemstack = s;
+				break;
+			}
+		}
+		NBTTagCompound tag = itemstack.getTagCompound();
+		if (tag != null)
+		{
+			if(itemstack.getTagCompound().getInteger("DerpCoins") > 0)
+			{
+				itemstack.getTagCompound().setInteger("DerpCoins", itemstack.getTagCompound().getInteger("DerpCoins") - 1);
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
 	 //@Override
 	 /*public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int x, int y, int z, int side, float px, float py, float pz)
 	 {
