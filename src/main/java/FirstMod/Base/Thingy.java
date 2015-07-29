@@ -137,7 +137,7 @@ public class Thingy
     	//RenderingRegistry.registerEntityRenderingHandler(DerpCoinProjectile.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), derpCoin, Minecraft.getMinecraft().getRenderItem()));
     	ModelBakery.addVariantName(magicClock, "derpcoin:magicClockBackward", "derpcoin:magicClockForward");
     	ModelBakery.addVariantName(magicDownfall, "derpcoin:magicDownfallFull", "derpcoin:magicDownfallEmpty");
-    	ModelBakery.addVariantName(derpSack, "derpcoin:derpsackEmpty", "derpcoin:derpsackPartial", "derpcoin:derpsackFull");
+    	ModelBakery.addVariantName(derpSack, "derpcoin:derpsackEmpty", "derpcoin:derpsackPartial1", "derpcoin:derpsackPartial2", "derpcoin:derpsackPartial3", "derpcoin:derpsackFull");
     	
     	if(event.getSide() == Side.CLIENT)
     	{
@@ -158,8 +158,10 @@ public class Thingy
     		renderItem.getItemModelMesher().register(derpIngot, 0, new ModelResourceLocation("derpcoin:" + "derpIngot", "inventory"));
     		renderItem.getItemModelMesher().register(derpCoinU, 0, new ModelResourceLocation("derpcoin:derpCoinU", "inventory"));
     		renderItem.getItemModelMesher().register(derpSack, 0, new ModelResourceLocation("derpcoin:derpsackEmpty", "inventory"));
-    		renderItem.getItemModelMesher().register(derpSack, 1, new ModelResourceLocation("derpcoin:derpsackPartial", "inventory"));
-    		renderItem.getItemModelMesher().register(derpSack, 2, new ModelResourceLocation("derpcoin:derpsackFull", "inventory"));
+    		renderItem.getItemModelMesher().register(derpSack, 1, new ModelResourceLocation("derpcoin:derpsackPartial1", "inventory"));
+    		renderItem.getItemModelMesher().register(derpSack, 2, new ModelResourceLocation("derpcoin:derpsackPartial2", "inventory"));
+    		renderItem.getItemModelMesher().register(derpSack, 3, new ModelResourceLocation("derpcoin:derpsackPartial3", "inventory"));
+    		renderItem.getItemModelMesher().register(derpSack, 4, new ModelResourceLocation("derpcoin:derpsackFull", "inventory"));
     		//renderItem.getItemModelMesher().register(derpBackpack, 0, new ModelResourceLocation("derpcoin:derpBackpack", "inventory"));
     		renderItem.getItemModelMesher().register(Item.getItemFromBlock(derpCoinBlock), 0, new ModelResourceLocation("derpcoin:" + "derpCoinBlock", "inventory"));
     	}
