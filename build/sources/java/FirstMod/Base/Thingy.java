@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.common.util.EnumHelper;
@@ -56,6 +57,7 @@ public class Thingy
     public static ToolMaterial derpMaterial = EnumHelper.addToolMaterial("derpMaterial", 3, 600, 7.0F, 2.5F, 22);
     public static ItemSword derpSword;
     public static DerpPickaxe derpPickaxe;
+    public static ItemSpade derpShovel;
     public static MagicItem magicItem;
     public static Item derpCoinU;
     public static DerpSack derpSack;
@@ -80,6 +82,8 @@ public class Thingy
 		magicItem.setUnlocalizedName("magicItem");
 		magicItem.setMaxStackSize(1);
 		
+		derpShovel = new ItemSpade(derpMaterial);
+		derpShovel.setUnlocalizedName("derpShovel");
 		
 		magicDownfall = new MagicToggledownfall();
 
@@ -162,6 +166,7 @@ public class Thingy
     		renderItem.getItemModelMesher().register(derpSack, 2, new ModelResourceLocation("derpcoin:derpsackPartial2", "inventory"));
     		renderItem.getItemModelMesher().register(derpSack, 3, new ModelResourceLocation("derpcoin:derpsackPartial3", "inventory"));
     		renderItem.getItemModelMesher().register(derpSack, 4, new ModelResourceLocation("derpcoin:derpsackFull", "inventory"));
+    		renderItem.getItemModelMesher().register(derpShovel, 4, new ModelResourceLocation("derpcoin:derpShovel", "inventory"));
     		//renderItem.getItemModelMesher().register(derpBackpack, 0, new ModelResourceLocation("derpcoin:derpBackpack", "inventory"));
     		renderItem.getItemModelMesher().register(Item.getItemFromBlock(derpCoinBlock), 0, new ModelResourceLocation("derpcoin:" + "derpCoinBlock", "inventory"));
     	}
@@ -174,6 +179,7 @@ public class Thingy
     	GameRegistry.registerBlock(derpCoinBlock, "derpCoinBlock");
     	GameRegistry.registerItem(derpSword, "derpSword");
 		GameRegistry.registerItem(derpPickaxe, "derpPickaxe");
+		GameRegistry.registerItem(derpShovel, "derpShovel");
 		GameRegistry.registerItem(derpHelmet = new DerpArmor("derpHelmet", derpArmor, 1, 0), "derp_helmet");
 		GameRegistry.registerItem(derpChestplate = new DerpArmor("derpChestplate", derpArmor, 1, 1), "derp_chestplate"); 
 		GameRegistry.registerItem(derpLeggings = new DerpArmor("derpLeggings", derpArmor, 2, 2), "derp_leggings"); 
@@ -183,6 +189,7 @@ public class Thingy
 		GameRegistry.registerItem(magicDownfall, "MagicDownfall");
 		GameRegistry.registerItem(derpSack, "derpSack");
 		GameRegistry.registerItem(derpCoinU, "derpCoinU");
+		
 		//GameRegistry.registerItem(derpBackpack, "derpBackpack");
     }
     
@@ -193,6 +200,7 @@ public class Thingy
     	derpCoinBlock.setCreativeTab(derpTab.tabDerpCoin);
     	derpSword.setCreativeTab(derpTab.tabDerpCoin);
     	derpPickaxe.setCreativeTab(derpTab.tabDerpCoin);
+    	derpShovel.setCreativeTab(derpTab.tabDerpCoin);
     	derpHelmet.setCreativeTab(derpTab.tabDerpCoin);
     	derpChestplate.setCreativeTab(derpTab.tabDerpCoin);
     	derpLeggings.setCreativeTab(derpTab.tabDerpCoin);

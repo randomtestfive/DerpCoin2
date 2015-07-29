@@ -11,3 +11,4 @@
 /build/libs/*
 .gradle/gradle.log
 *.class
+*.class
