@@ -1,7 +1,7 @@
 {
 	"parent": "builtin/generated",
 	"textures": {
-		"layer0": "derpcoin:items/derpsackPartial"
+		"layer0": "derpcoin:items/derpsackPartial1"
 	},
 	"display": {
 		"thirdperson": {

@@ -38,9 +38,17 @@ public class DerpSack extends Item
 		}
 		else if(par1Item.getTagCompound().getInteger("DerpCoins") == 512)
 		{
+			par1Item.setItemDamage(4);
+		}
+		else if(par1Item.getTagCompound().getInteger("DerpCoins") < 512 && par1Item.getTagCompound().getInteger("DerpCoins") >= 342)
+		{
+			par1Item.setItemDamage(3);
+		}
+		else if(par1Item.getTagCompound().getInteger("DerpCoins") < 342 && par1Item.getTagCompound().getInteger("DerpCoins") >= 171)
+		{
 			par1Item.setItemDamage(2);
 		}
-		else
+		else if(par1Item.getTagCompound().getInteger("DerpCoins") < 171 && par1Item.getTagCompound().getInteger("DerpCoins") != 0)
 		{
 			par1Item.setItemDamage(1);
 		}
