@@ -58,7 +58,7 @@ public class DerpCoinProjectile extends EntityThrowable
     protected void onImpact(MovingObjectPosition par1MovingObjectPosition)
     {
     	//MinecraftServer.getServer().worldServerForDimension(this.dimension).playSoundAtEntity(this, "random.bow", 2.0F, 1.0F);
-    	MinecraftServer.getServer().worldServerForDimension(this.dimension).createExplosion(this, this.posX, this.posY, this.posZ,  (float)(this.explosionRadius), true);
+    	MinecraftServer.getServer().worldServerForDimension(this.dimension).createExplosion(this, this.posX, this.posY, this.posZ,  (float)(DerpCoinProjectile.explosionRadius), true);
     	if (!MinecraftServer.getServer().worldServerForDimension(this.dimension).isRemote)
     	{
     		System.out.println("Hit");

@@ -64,19 +64,27 @@ public class DerpSack extends Item
 			tag = new NBTTagCompound();
 			par1ItemStack.setTagCompound(tag);
 		}
-		if(par1ItemStack.getTagCompound().getInteger("DerpCoins") < 512)
+		
+		if(par3Player.isSneaking())
 		{
-			if (par1ItemStack.getTagCompound() != null)
+			consumeDerpcoinStack(par3Player.inventory, par1ItemStack);
+		}
+		else
+		{
+			if(par1ItemStack.getTagCompound().getInteger("DerpCoins") < 512)
 			{
-				if (par3Player.inventory.consumeInventoryItem(Thingy.derpCoin))
+				if (par1ItemStack.getTagCompound() != null)
 				{
-					par1ItemStack.getTagCompound().setInteger("DerpCoins", par1ItemStack.getTagCompound().getInteger("DerpCoins") + 1);
-					System.out.println(par1ItemStack.getTagCompound().getInteger("DerpCoins"));
+					if (par3Player.inventory.consumeInventoryItem(Thingy.derpCoin))
+					{
+						par1ItemStack.getTagCompound().setInteger("DerpCoins", par1ItemStack.getTagCompound().getInteger("DerpCoins") + 1);
+						//System.out.println(par1ItemStack.getTagCompound().getInteger("DerpCoins"));
+					}
 				}
-			}
-			else
-			{
-				par1ItemStack.getTagCompound().setInteger("DerpCoins", 0);
+				else
+				{
+					par1ItemStack.getTagCompound().setInteger("DerpCoins", 0);
+				}
 			}
 		}
 		return par1ItemStack;

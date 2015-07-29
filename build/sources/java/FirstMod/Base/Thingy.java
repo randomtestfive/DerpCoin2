@@ -67,7 +67,7 @@ public class Thingy
     public void preInit(FMLPreInitializationEvent event)
     {
     	
-    	this.proxy.preInit(event);
+    	Thingy.proxy.preInit(event);
     	derpSword = new ItemSword(derpMaterial);
     	
     	
@@ -137,7 +137,7 @@ public class Thingy
     public void Init(FMLInitializationEvent event)
     {
     	//NetworkRegistry.INSTANCE.registerGuiHandler(this, new GUIHandler());
-    	this.proxy.init(event);
+    	Thingy.proxy.init(event);
     	//RenderingRegistry.registerEntityRenderingHandler(DerpCoinProjectile.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), derpCoin, Minecraft.getMinecraft().getRenderItem()));
     	ModelBakery.addVariantName(magicClock, "derpcoin:magicClockBackward", "derpcoin:magicClockForward");
     	ModelBakery.addVariantName(magicDownfall, "derpcoin:magicDownfallFull", "derpcoin:magicDownfallEmpty");
