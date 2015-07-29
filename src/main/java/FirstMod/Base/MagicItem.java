@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
-public class MagicItem extends Item
+public class MagicItem extends DCConsumer
 {
 	public MagicItem()
 	{
@@ -40,29 +40,6 @@ public class MagicItem extends Item
 		 return par1ItemStack;
 	 }
 	 
-	 public static boolean subDerpsack(InventoryPlayer inventory) 
-	 {
-		ItemStack itemstack = null;
-		for (ItemStack s : inventory.mainInventory)
-		{
-			if (s != null && s.getItem() instanceof DerpSack) 
-			{
-				itemstack = s;
-				break;
-			}
-		}
-		NBTTagCompound tag = itemstack.getTagCompound();
-		if (tag != null)
-		{
-			if(itemstack.getTagCompound().getInteger("DerpCoins") > 0)
-			{
-				itemstack.getTagCompound().setInteger("DerpCoins", itemstack.getTagCompound().getInteger("DerpCoins") - 1);
-				return true;
-			}
-		}
-		
-		return false;
-	}
 	
 	 //@Override
 	 /*public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int x, int y, int z, int side, float px, float py, float pz)

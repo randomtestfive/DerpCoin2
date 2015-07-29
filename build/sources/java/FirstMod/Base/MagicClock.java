@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class MagicClock extends Item
+public class MagicClock extends DCConsumer
 {
 	private final String name = "magicClock";
 	
@@ -117,7 +117,7 @@ public class MagicClock extends Item
 		}
 		else
 		{
-			if (par3Player.capabilities.isCreativeMode||par3Player.inventory.consumeInventoryItem(Thingy.derpCoin))
+			if (par3Player.capabilities.isCreativeMode || subDerpsack(par3Player.inventory) || par3Player.inventory.consumeInventoryItem(Thingy.derpCoin))
 			{
 				if(par1Stack.getItemDamage() == 0)
 				{

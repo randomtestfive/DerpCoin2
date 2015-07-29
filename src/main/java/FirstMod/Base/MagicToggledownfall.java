@@ -9,7 +9,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.WorldInfo;
 
-public class MagicToggledownfall extends Item
+public class MagicToggledownfall extends DCConsumer
 {
 	
 	public MagicToggledownfall()
@@ -24,7 +24,7 @@ public class MagicToggledownfall extends Item
 		 CommandToggleDownfall toggle = new CommandToggleDownfall();
 		 System.out.println("toggledown");
 		 //par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 1F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
-		 if(par3EntityPlayer.capabilities.isCreativeMode||par3EntityPlayer.inventory.consumeInventoryItem(Thingy.derpCoin))
+		 if(par3EntityPlayer.capabilities.isCreativeMode || subDerpsack(par3EntityPlayer.inventory) || par3EntityPlayer.inventory.consumeInventoryItem(Thingy.derpCoin))
 		 {
 			 WorldInfo worldinfo = MinecraftServer.getServer().worldServers[0].getWorldInfo();
 			 //worldinfo.setRaining(!worldinfo.isRaining());
