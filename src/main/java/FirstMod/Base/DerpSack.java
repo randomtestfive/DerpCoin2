@@ -6,6 +6,7 @@ import java.util.List;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -87,7 +88,42 @@ public class DerpSack extends Item
 		if (itemStack.getTagCompound() != null) 
 		{
             int coins = itemStack.getTagCompound().getInteger("DerpCoins");
-            list.add(EnumChatFormatting.YELLOW + "DerpCoins: " + coins);              
+            list.add(EnumChatFormatting.YELLOW + "DerpCoins: " + coins);
 		}
+	}
+	
+	public void consumeDerpcoinStack(InventoryPlayer inventory, ItemStack derpsack)
+	{
+		ItemStack itemstack = null;
+		int stackAmount = 0;
+		int roomLeftInSack = 0;
+		int stackRemains = 0;
+		
+		for (ItemStack s : inventory.mainInventory)
+		{
+			if (s != null && s.getItem() instanceof DerpCoin) 
+			{
+				itemstack = s;
+				break;
+			}
+		}
+		
+		stackAmount = itemstack.stackSize;
+		
+		if(!(derpsack.getTagCompound().getInteger("DerpCoins") == 512))
+		{
+			if(derpsack.getTagCompound().getInteger("DerpCoins") + stackAmount <= 512)
+			{
+				itemstack.stackSize = 0;
+				derpsack.getTagCompound().setInteger("DerpCoins", derpsack.getTagCompound().getInteger("DerpCoins") + stackAmount);
+			}
+			else
+			{
+				roomLeftInSack = 512 - derpsack.getTagCompound().getInteger("DerpCoins");
+				stackRemains = stackAmount - roomLeftInSack;
+				itemstack.stackSize = stackRemains;
+				derpsack.getTagCompound().setInteger("DerpCoins", derpsack.getTagCompound().getInteger("DerpCoins") + roomLeftInSack);
+			}
+		}	
 	}
 }
