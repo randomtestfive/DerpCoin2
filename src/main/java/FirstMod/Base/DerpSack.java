@@ -106,6 +106,7 @@ public class DerpSack extends Item
 		int stackAmount = 0;
 		int roomLeftInSack = 0;
 		int stackRemains = 0;
+		int slot = 0;
 		
 		for (ItemStack s : inventory.mainInventory)
 		{
@@ -122,8 +123,9 @@ public class DerpSack extends Item
 		{
 			if(derpsack.getTagCompound().getInteger("DerpCoins") + stackAmount <= 512)
 			{
-				itemstack.stackSize = 0;
+				itemstack.stackSize = 1;
 				derpsack.getTagCompound().setInteger("DerpCoins", derpsack.getTagCompound().getInteger("DerpCoins") + stackAmount);
+				inventory.consumeInventoryItem(Thingy.derpCoin);
 			}
 			else
 			{
