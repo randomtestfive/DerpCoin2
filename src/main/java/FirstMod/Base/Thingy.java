@@ -67,6 +67,7 @@ public class Thingy
     public static Item derpCoinU;
     public static DerpSack derpSack;
     public static DerpHealer derpHealer;
+    public static DerpFood derpFood;
     //public static DerpBackpack derpBackpack;
     
     @EventHandler
@@ -115,6 +116,8 @@ public class Thingy
 		derpCoinBlock.setStepSound(Block.soundTypeMetal);
 		
 		derpHealer = new DerpHealer();
+		
+		derpFood = new DerpFood(4, 10, false);
 		
 		registerItems();
 		setupDerpTab();
