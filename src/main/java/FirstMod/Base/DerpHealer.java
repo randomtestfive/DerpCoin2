@@ -26,7 +26,7 @@ public class DerpHealer extends DCConsumer
 				}
 				else if(par3Player.getHealth() <= 18)
 				{
-					par3Player.setHealth(par3Player.getHealth() + 2);
+					par3Player.setHealth(par3Player.getHealth() + 1);
 				}
 			}
 		}
