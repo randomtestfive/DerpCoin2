@@ -136,6 +136,13 @@ public class Thingy
 		GameRegistry.addRecipe(new ItemStack(derpBoots), "   ", "X X", "X X", 'X', new ItemStack(derpIngot));
 		GameRegistry.addRecipe(new ItemStack(derpSword), " X ", " X ", " Y ", 'X', new ItemStack(derpIngot), 'Y', new ItemStack(Items.stick));
 		GameRegistry.addRecipe(new ItemStack(derpPickaxe), "XXX", " Y ", " Y ", 'X', new ItemStack(derpIngot), 'Y', new ItemStack(Items.stick));
+		GameRegistry.addRecipe(new ItemStack(derpAxe), " XX", " YX", " Y ", 'X', new ItemStack(derpIngot), 'Y', new ItemStack(Items.stick));
+		GameRegistry.addRecipe(new ItemStack(derpAxe), "XX ", "XY ", " Y ", 'X', new ItemStack(derpIngot), 'Y', new ItemStack(Items.stick));
+		GameRegistry.addRecipe(new ItemStack(derpShovel), " X ", " Y ", " Y ", 'X', new ItemStack(derpIngot), 'Y', new ItemStack(Items.stick));
+		GameRegistry.addRecipe(new ItemStack(derpShovel), "X  ", "Y  ", "Y  ", 'X', new ItemStack(derpIngot), 'Y', new ItemStack(Items.stick));
+		GameRegistry.addRecipe(new ItemStack(derpShovel), "  X", "  Y", "  Y", 'X', new ItemStack(derpIngot), 'Y', new ItemStack(Items.stick));
+		GameRegistry.addRecipe(new ItemStack(derpHoe), " XX", " Y ", " Y ", 'X', new ItemStack(derpIngot), 'Y', new ItemStack(Items.stick));
+		GameRegistry.addRecipe(new ItemStack(derpHoe), "XX ", " Y ", " Y ", 'X', new ItemStack(derpIngot), 'Y', new ItemStack(Items.stick));
 		GameRegistry.addShapelessRecipe(new ItemStack(derpIngot, 9), new ItemStack(derpCoinBlock, 1));
 		GameRegistry.addShapelessRecipe(new ItemStack(derpCoin, 9), new ItemStack(derpIngot, 1));
 		GameRegistry.addSmelting(Items.gold_nugget, new ItemStack(derpCoin), 0.2f);
