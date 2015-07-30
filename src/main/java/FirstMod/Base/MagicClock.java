@@ -2,11 +2,14 @@ package FirstMod.Base;
 
 import java.util.List;
 
+import net.minecraft.command.ICommandSender;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class MagicClock extends DCConsumer
@@ -122,12 +125,16 @@ public class MagicClock extends DCConsumer
 				if(par1Stack.getItemDamage() == 0)
 				{
 					//par3Player.setItemInUse(par1Stack, 100);
-					par2World.setWorldTime(par2World.getWorldTime() + 1000);
+					//par2World.setWorldTime(par2World.getWorldTime() + 1000);
+					//par2World.setWorldTime(MinecraftServer.getServer().getCurrentTime() + 1000);
+					addTime(500);
 				}
 				else
 				{
 					//par3Player.setItemInUse(par1Stack, 100);
-					par2World.setWorldTime(par2World.getWorldTime() - 1000);
+					//par2World.setWorldTime(par2World.getWorldTime() - 1000);
+					//par2World.setWorldTime(MinecraftServer.getServer().getCurrentTime() - 1000);
+					addTime(-500);
 				}
 			}
 		}
@@ -144,5 +151,14 @@ public class MagicClock extends DCConsumer
 		System.out.println("stopped using");
 		System.out.println(par1Stack.getItemDamage());
 	}
+	
+    protected void addTime(int time)
+    {
+        for (int j = 0; j < MinecraftServer.getServer().worldServers.length; ++j)
+        {
+            WorldServer worldserver = MinecraftServer.getServer().worldServers[j];
+            worldserver.setWorldTime(worldserver.getWorldTime() + (long)time);
+        }
+    }
 	
 }

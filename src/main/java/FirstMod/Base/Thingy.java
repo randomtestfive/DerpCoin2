@@ -72,7 +72,6 @@ public class Thingy
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-    	
     	Thingy.proxy.preInit(event);
     	derpSword = new ItemSword(derpMaterial);
     	derpSword.setUnlocalizedName("derpSword");
@@ -152,6 +151,7 @@ public class Thingy
     @EventHandler
     public void Init(FMLInitializationEvent event)
     {
+    	
     	//NetworkRegistry.INSTANCE.registerGuiHandler(this, new GUIHandler());
     	Thingy.proxy.init(event);
     	//RenderingRegistry.registerEntityRenderingHandler(DerpCoinProjectile.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), derpCoin, Minecraft.getMinecraft().getRenderItem()));

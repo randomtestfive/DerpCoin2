@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class DerpHealer extends Item
+public class DerpHealer extends DCConsumer
 {
 	public DerpHealer()
 	{
@@ -18,7 +18,7 @@ public class DerpHealer extends Item
 	{
 		if(par3Player.getHealth() != 20)
 		{
-			if(/*subDerpsack(par3Player.inventory) || */par3Player.inventory.consumeInventoryItem(Thingy.derpCoin))
+			if(subDerpsack(par3Player.inventory) || par3Player.inventory.consumeInventoryItem(Thingy.derpCoin))
 			{
 				if(par3Player.getHealth() == 19)
 				{

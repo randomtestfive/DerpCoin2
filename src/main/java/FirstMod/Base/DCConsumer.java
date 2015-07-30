@@ -18,16 +18,18 @@ public class DCConsumer extends Item
 				break;
 			}
 		}
-		NBTTagCompound tag = itemstack.getTagCompound();
-		if (tag != null)
+		if(itemstack != null)
 		{
-			if(itemstack.getTagCompound().getInteger("DerpCoins") > 0)
+			NBTTagCompound tag = itemstack.getTagCompound();
+			if (tag != null)
 			{
-				itemstack.getTagCompound().setInteger("DerpCoins", itemstack.getTagCompound().getInteger("DerpCoins") - 1);
-				return true;
+				if(itemstack.getTagCompound().getInteger("DerpCoins") > 0)
+				{
+					itemstack.getTagCompound().setInteger("DerpCoins", itemstack.getTagCompound().getInteger("DerpCoins") - 1);
+					return true;
+				}
 			}
 		}
-		
 		return false;
 	}
 }
