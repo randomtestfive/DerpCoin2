@@ -17,6 +17,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class DerpSack extends Item
 {
+	
+	public DerpSack()
+	{
+		super();
+		this.setMaxStackSize(1);
+	}
+	
 	@Override
 	public void onCreated(ItemStack par1Item, World par2World, EntityPlayer par3Player)
 	{

@@ -215,6 +215,7 @@ public class Thingy
 		GameRegistry.registerItem(derpSack, "derpSack");
 		GameRegistry.registerItem(derpCoinU, "derpCoinU");
 		GameRegistry.registerItem(derpHealer, "derpHealer");
+		GameRegistry.registerItem(derpFood, "derpFood");
 		
 		//GameRegistry.registerItem(derpBackpack, "derpBackpack");
     }
@@ -238,6 +239,7 @@ public class Thingy
     	magicDownfall.setCreativeTab(derpTab.tabDerpCoin);
     	derpSack.setCreativeTab(derpTab.tabDerpCoin);
     	derpHealer.setCreativeTab(derpTab.tabDerpCoin);
+    	derpFood.setCreativeTab(derpTab.tabDerpCoin);
     	//derpBackpack.setCreativeTab(derpTab.tabDerpCoin);
     }
 }
