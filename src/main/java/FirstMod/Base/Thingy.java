@@ -12,6 +12,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
@@ -58,6 +60,8 @@ public class Thingy
     public static ItemSword derpSword;
     public static DerpPickaxe derpPickaxe;
     public static ItemSpade derpShovel;
+    public static DerpAxe derpAxe;
+    public static ItemHoe derpHoe;
     public static MagicItem magicItem;
     public static Item derpCoinU;
     public static DerpSack derpSack;
@@ -74,6 +78,11 @@ public class Thingy
     	derpSword.setUnlocalizedName("derpSword");
     	
     	derpPickaxe = new DerpPickaxe(derpMaterial);
+    	
+    	derpAxe = new DerpAxe(derpMaterial);
+    	
+    	derpHoe = new ItemHoe(derpMaterial);
+    	derpHoe.setUnlocalizedName("derpHoe");
 
     	//client.registerRenderers();
     	
@@ -154,6 +163,9 @@ public class Thingy
     		renderItem.getItemModelMesher().register(magicDownfall, 0, new ModelResourceLocation("derpcoin:" + "magicDownfallFull", "inventory"));
     		renderItem.getItemModelMesher().register(derpSword, 0, new ModelResourceLocation("derpcoin:" + "derpSword", "inventory"));
     		renderItem.getItemModelMesher().register(derpPickaxe, 0, new ModelResourceLocation("derpcoin:" + "derpPickaxe", "inventory"));
+    		renderItem.getItemModelMesher().register(derpShovel, 0, new ModelResourceLocation("derpcoin:" + "derpShovel", "inventory"));
+    		renderItem.getItemModelMesher().register(derpAxe, 0, new ModelResourceLocation("derpcoin:" + "derpAxe", "inventory"));
+    		renderItem.getItemModelMesher().register(derpHoe, 0, new ModelResourceLocation("derpcoin:" + "derpHoe", "inventory"));
     		renderItem.getItemModelMesher().register(derpHelmet, 0, new ModelResourceLocation("derpcoin:" + "derp_helmet", "inventory"));
     		renderItem.getItemModelMesher().register(derpChestplate, 0, new ModelResourceLocation("derpcoin:" + "derp_chestplate", "inventory"));
     		renderItem.getItemModelMesher().register(derpLeggings, 0, new ModelResourceLocation("derpcoin:" + "derp_leggings", "inventory"));
@@ -179,7 +191,9 @@ public class Thingy
     	GameRegistry.registerBlock(derpCoinBlock, "derpCoinBlock");
     	GameRegistry.registerItem(derpSword, "derpSword");
 		GameRegistry.registerItem(derpPickaxe, "derpPickaxe");
+		GameRegistry.registerItem(derpAxe, "derpAxe");
 		GameRegistry.registerItem(derpShovel, "derpShovel");
+		GameRegistry.registerItem(derpHoe, "derpHoe");
 		GameRegistry.registerItem(derpHelmet = new DerpArmor("derpHelmet", derpArmor, 1, 0), "derp_helmet");
 		GameRegistry.registerItem(derpChestplate = new DerpArmor("derpChestplate", derpArmor, 1, 1), "derp_chestplate"); 
 		GameRegistry.registerItem(derpLeggings = new DerpArmor("derpLeggings", derpArmor, 2, 2), "derp_leggings"); 
@@ -200,7 +214,9 @@ public class Thingy
     	derpCoinBlock.setCreativeTab(derpTab.tabDerpCoin);
     	derpSword.setCreativeTab(derpTab.tabDerpCoin);
     	derpPickaxe.setCreativeTab(derpTab.tabDerpCoin);
+    	derpAxe.setCreativeTab(derpTab.tabDerpCoin);
     	derpShovel.setCreativeTab(derpTab.tabDerpCoin);
+    	derpHoe.setCreativeTab(derpTab.tabDerpCoin);
     	derpHelmet.setCreativeTab(derpTab.tabDerpCoin);
     	derpChestplate.setCreativeTab(derpTab.tabDerpCoin);
     	derpLeggings.setCreativeTab(derpTab.tabDerpCoin);
