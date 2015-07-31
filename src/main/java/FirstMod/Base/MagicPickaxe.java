@@ -2,6 +2,7 @@ package FirstMod.Base;
 
 import java.util.List;
 
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemPickaxe;
@@ -37,7 +38,7 @@ public class MagicPickaxe extends ItemPickaxe
 	public void onUpdate(ItemStack par1stack, World par2world, Entity par3entity, int par4slot, boolean isSelected) 
 	{
 		counter = counter + 1;
-		if(counter == 100)
+		if(counter == 40)
 		{
 			counter = 0;
 			System.out.println("pickcount");
@@ -98,6 +99,22 @@ public class MagicPickaxe extends ItemPickaxe
 			stack.setTagCompound(tag);
 		}
 		return 8.0F;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public ModelResourceLocation getModel(ItemStack stack, EntityPlayer player, int useRemaining)
+	{
+		NBTTagCompound tag = stack.getTagCompound();
+		ModelResourceLocation out = new ModelResourceLocation("derpcoin:magicPickaxe", "inventory");
+		if(tag != null)
+		{
+			if(stack.getTagCompound().getBoolean("Active"))
+			{	
+				out = new ModelResourceLocation("derpcoin:magicPickaxeA", "inventory");
+			}
+		}
+		return out;
 	}
 	
 	/*@SideOnly(Side.CLIENT)
