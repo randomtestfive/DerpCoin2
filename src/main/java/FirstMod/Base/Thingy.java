@@ -58,7 +58,7 @@ public class Thingy
     public static DerpArmor derpLeggings;
     public static DerpArmor derpBoots;
     public static ToolMaterial derpMaterial = EnumHelper.addToolMaterial("derpMaterial", 3, 600, 7.0F, 2.5F, 22);
-    public static ToolMaterial magicMaterial = EnumHelper.addToolMaterial("magicMaterial", 4, 800, 8.0F, 4.0F, 20);
+    public static ToolMaterial magicMaterial = EnumHelper.addToolMaterial("magicMaterial", 4, 1800, 8.0F, 4.0F, 20);
     public static ItemSword derpSword;
     public static DerpPickaxe derpPickaxe;
     public static ItemSpade derpShovel;

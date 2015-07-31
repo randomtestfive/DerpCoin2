@@ -113,7 +113,6 @@ public class DerpSack extends Item
 		int stackAmount = 0;
 		int roomLeftInSack = 0;
 		int stackRemains = 0;
-		int slot = 0;
 		
 		for (ItemStack s : inventory.mainInventory)
 		{
@@ -123,24 +122,26 @@ public class DerpSack extends Item
 				break;
 			}
 		}
-		
-		stackAmount = itemstack.stackSize;
-		
-		if(!(derpsack.getTagCompound().getInteger("DerpCoins") == 512))
+		if(itemstack != null)
 		{
-			if(derpsack.getTagCompound().getInteger("DerpCoins") + stackAmount <= 512)
+			stackAmount = itemstack.stackSize;
+			
+			if(!(derpsack.getTagCompound().getInteger("DerpCoins") == 512))
 			{
-				itemstack.stackSize = 1;
-				derpsack.getTagCompound().setInteger("DerpCoins", derpsack.getTagCompound().getInteger("DerpCoins") + stackAmount);
-				inventory.consumeInventoryItem(Thingy.derpCoin);
+				if(derpsack.getTagCompound().getInteger("DerpCoins") + stackAmount <= 512)
+				{
+					itemstack.stackSize = 1;
+					derpsack.getTagCompound().setInteger("DerpCoins", derpsack.getTagCompound().getInteger("DerpCoins") + stackAmount);
+					inventory.consumeInventoryItem(Thingy.derpCoin);
+				}
+				else
+				{
+					roomLeftInSack = 512 - derpsack.getTagCompound().getInteger("DerpCoins");
+					stackRemains = stackAmount - roomLeftInSack;
+					itemstack.stackSize = stackRemains;
+					derpsack.getTagCompound().setInteger("DerpCoins", derpsack.getTagCompound().getInteger("DerpCoins") + roomLeftInSack);
+				}
 			}
-			else
-			{
-				roomLeftInSack = 512 - derpsack.getTagCompound().getInteger("DerpCoins");
-				stackRemains = stackAmount - roomLeftInSack;
-				itemstack.stackSize = stackRemains;
-				derpsack.getTagCompound().setInteger("DerpCoins", derpsack.getTagCompound().getInteger("DerpCoins") + roomLeftInSack);
-			}
-		}	
+		}
 	}
 }
