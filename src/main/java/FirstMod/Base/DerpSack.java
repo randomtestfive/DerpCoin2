@@ -63,8 +63,8 @@ public class DerpSack extends Item
 	}
 	
 	@Override
-	 public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3Player) 
-	 {
+	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3Player) 
+	{
 		NBTTagCompound tag = par1ItemStack.getTagCompound();
 		if (tag == null) 
 		{

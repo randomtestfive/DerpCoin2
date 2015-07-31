@@ -16,3 +16,6 @@ item.derpSack.name=DerpCoin Sack
 item.derpShovel.name=DerpCoin Shovel
 item.derpAxe.name=DerpCoin Axe
 item.derpHoe.name=DerpCoin Hoe
+item.derpHealer.name=Magic Healer
+item.magicFood.name=Magic Food
+item.magicPickaxe=Magic Pickaxe

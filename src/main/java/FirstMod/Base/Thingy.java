@@ -58,6 +58,7 @@ public class Thingy
     public static DerpArmor derpLeggings;
     public static DerpArmor derpBoots;
     public static ToolMaterial derpMaterial = EnumHelper.addToolMaterial("derpMaterial", 3, 600, 7.0F, 2.5F, 22);
+    public static ToolMaterial magicMaterial = EnumHelper.addToolMaterial("magicMaterial", 4, 800, 8.0F, 4.0F, 20);
     public static ItemSword derpSword;
     public static DerpPickaxe derpPickaxe;
     public static ItemSpade derpShovel;
@@ -67,7 +68,8 @@ public class Thingy
     public static Item derpCoinU;
     public static DerpSack derpSack;
     public static DerpHealer derpHealer;
-    public static DerpFood derpFood;
+    public static DerpFood magicFood;
+    public static MagicPickaxe magicPickaxe;
     //public static DerpBackpack derpBackpack;
     
     @EventHandler
@@ -117,7 +119,9 @@ public class Thingy
 		
 		derpHealer = new DerpHealer();
 		
-		derpFood = new DerpFood(4, 10, false);
+		magicFood = new DerpFood(4, 10, false);
+		
+		magicPickaxe = new MagicPickaxe(magicMaterial);
 		
 		registerItems();
 		setupDerpTab();
@@ -190,6 +194,8 @@ public class Thingy
     		renderItem.getItemModelMesher().register(derpSack, 4, new ModelResourceLocation("derpcoin:derpsackFull", "inventory"));
     		renderItem.getItemModelMesher().register(derpShovel, 4, new ModelResourceLocation("derpcoin:derpShovel", "inventory"));
     		renderItem.getItemModelMesher().register(derpHealer, 0, new ModelResourceLocation("derpcoin:derpHealer", "inventory"));
+    		renderItem.getItemModelMesher().register(magicFood, 0, new ModelResourceLocation("derpcoin:magicFood", "inventory"));
+    		renderItem.getItemModelMesher().register(magicPickaxe, 0, new ModelResourceLocation("derpcoin:magicPickaxe", "inventory"));
     		//renderItem.getItemModelMesher().register(derpBackpack, 0, new ModelResourceLocation("derpcoin:derpBackpack", "inventory"));
     		renderItem.getItemModelMesher().register(Item.getItemFromBlock(derpCoinBlock), 0, new ModelResourceLocation("derpcoin:" + "derpCoinBlock", "inventory"));
     	}
@@ -215,7 +221,8 @@ public class Thingy
 		GameRegistry.registerItem(derpSack, "derpSack");
 		GameRegistry.registerItem(derpCoinU, "derpCoinU");
 		GameRegistry.registerItem(derpHealer, "derpHealer");
-		GameRegistry.registerItem(derpFood, "derpFood");
+		GameRegistry.registerItem(magicFood, "magicFood");
+		GameRegistry.registerItem(magicPickaxe, "magicPickaxe");
 		
 		//GameRegistry.registerItem(derpBackpack, "derpBackpack");
     }
@@ -239,7 +246,8 @@ public class Thingy
     	magicDownfall.setCreativeTab(derpTab.tabDerpCoin);
     	derpSack.setCreativeTab(derpTab.tabDerpCoin);
     	derpHealer.setCreativeTab(derpTab.tabDerpCoin);
-    	derpFood.setCreativeTab(derpTab.tabDerpCoin);
+    	magicFood.setCreativeTab(derpTab.tabDerpCoin);
+    	magicPickaxe.setCreativeTab(derpTab.tabDerpCoin);
     	//derpBackpack.setCreativeTab(derpTab.tabDerpCoin);
     }
 }

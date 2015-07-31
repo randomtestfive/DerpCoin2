@@ -17,7 +17,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "0.9.37"
+version = "0.10.8"
 group= "FirstMod.Base" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "DerpCoin"
 
