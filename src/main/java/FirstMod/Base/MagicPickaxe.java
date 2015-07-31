@@ -38,7 +38,7 @@ public class MagicPickaxe extends ItemPickaxe
 	public void onUpdate(ItemStack par1stack, World par2world, Entity par3entity, int par4slot, boolean isSelected) 
 	{
 		counter = counter + 1;
-		if(counter == 40)
+		if(counter == 20)
 		{
 			counter = 0;
 			System.out.println("pickcount");
