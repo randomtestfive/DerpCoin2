@@ -15,6 +15,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class MagicPickaxe extends ItemPickaxe
 {
 	private DCConsumer consumer;
+	
+	private int counter = 0;
 
 	public MagicPickaxe(ToolMaterial p_i45347_1_) 
 	{
@@ -34,29 +36,34 @@ public class MagicPickaxe extends ItemPickaxe
 	@Override
 	public void onUpdate(ItemStack par1stack, World par2world, Entity par3entity, int par4slot, boolean isSelected) 
 	{
-		if(par3entity instanceof EntityPlayer)
+		counter = counter + 1;
+		if(counter == 100)
 		{
-			EntityPlayer player = (EntityPlayer) par3entity;
-			if(par1stack.getTagCompound() != null)
+			counter = 0;
+			System.out.println("pickcount");
+			if(par3entity instanceof EntityPlayer)
 			{
-				if(par1stack.getTagCompound().getBoolean("Active"))
+				EntityPlayer player = (EntityPlayer) par3entity;
+				if(par1stack.getTagCompound() != null)
 				{
-					if(consumer.subDerpsack(player.inventory) || player.inventory.consumeInventoryItem(Thingy.derpCoin))
+					if(par1stack.getTagCompound().getBoolean("Active"))
 					{
-					
-					}
-					else
-					{
-						par1stack.getTagCompound().setBoolean("Active", false);
+						if(consumer.subDerpsack(player.inventory) || player.inventory.consumeInventoryItem(Thingy.derpCoin))
+						{
+						
+						}
+						else
+						{
+							par1stack.getTagCompound().setBoolean("Active", false);
+						}
 					}
 				}
-			}
-			else
-			{
-				par1stack.setTagCompound(new NBTTagCompound());
+				else
+				{
+					par1stack.setTagCompound(new NBTTagCompound());
+				}
 			}
 		}
-		
 	}
 	
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3Player)
