@@ -1,22 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>DerpCoin2</name>
-	<comment/>
-	<projects/>
-	<natures>
-		<nature>org.eclipse.jdt.core.javanature</nature>
-	</natures>
+	<name>DerpCoin</name>
+	<comment></comment>
+	<projects>
+	</projects>
 	<buildSpec>
 		<buildCommand>
 			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments/>
+			<arguments>
+			</arguments>
 		</buildCommand>
 	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
 	<linkedResources>
 		<link>
 			<name>.link0</name>
 			<type>2</type>
 			<location>C:/Users/Cory/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.10-10.13.2.1291/start</location>
+		</link>
+		<link>
+			<name>common</name>
+			<type>2</type>
+			<location>C:/Users/Taylor/Documents/GitHub/DerpCoin2/common</location>
+		</link>
+		<link>
+			<name>jars</name>
+			<type>2</type>
+			<location>C:/Users/Taylor/Documents/GitHub/DerpCoin2/jars</location>
+		</link>
+		<link>
+			<name>lib</name>
+			<type>2</type>
+			<location>C:/Users/Taylor/Documents/GitHub/DerpCoin2/lib</location>
+		</link>
+		<link>
+			<name>src</name>
+			<type>2</type>
+			<location>C:/Users/Taylor/Documents/GitHub/DerpCoin2/src</location>
 		</link>
 	</linkedResources>
 </projectDescription>
