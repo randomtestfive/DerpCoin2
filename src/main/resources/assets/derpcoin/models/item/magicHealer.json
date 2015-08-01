@@ -1,7 +1,7 @@
 {
 	"parent": "builtin/generated",
 	"textures": {
-		"layer0": "derpcoin:items/derpHealer"
+		"layer0": "derpcoin:items/magicHealer"
 	},
 	"display": {
 		"thirdperson": {

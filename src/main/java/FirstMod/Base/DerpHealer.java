@@ -10,7 +10,7 @@ public class DerpHealer extends DCConsumer
 	public DerpHealer()
 	{
 		setMaxStackSize(1);
-		setUnlocalizedName("derpHealer");
+		setUnlocalizedName("magicHealer");
 	}
 	
 	@Override

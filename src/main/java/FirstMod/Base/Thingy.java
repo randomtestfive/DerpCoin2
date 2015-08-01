@@ -67,7 +67,7 @@ public class Thingy
     public static MagicItem magicItem;
     public static Item derpCoinU;
     public static DerpSack derpSack;
-    public static DerpHealer derpHealer;
+    public static DerpHealer magicHealer;
     public static DerpFood magicFood;
     public static MagicPickaxe magicPickaxe;
     //public static DerpBackpack derpBackpack;
@@ -117,7 +117,7 @@ public class Thingy
 		derpCoinBlock.setUnlocalizedName("derpCoinBlock");
 		derpCoinBlock.setStepSound(Block.soundTypeMetal);
 		
-		derpHealer = new DerpHealer();
+		magicHealer = new DerpHealer();
 		
 		magicFood = new DerpFood(4, 10, false);
 		
@@ -194,7 +194,7 @@ public class Thingy
     		renderItem.getItemModelMesher().register(derpSack, 3, new ModelResourceLocation("derpcoin:derpsackPartial3", "inventory"));
     		renderItem.getItemModelMesher().register(derpSack, 4, new ModelResourceLocation("derpcoin:derpsackFull", "inventory"));
     		renderItem.getItemModelMesher().register(derpShovel, 4, new ModelResourceLocation("derpcoin:derpShovel", "inventory"));
-    		renderItem.getItemModelMesher().register(derpHealer, 0, new ModelResourceLocation("derpcoin:derpHealer", "inventory"));
+    		renderItem.getItemModelMesher().register(magicHealer, 0, new ModelResourceLocation("derpcoin:magicHealer", "inventory"));
     		renderItem.getItemModelMesher().register(magicFood, 0, new ModelResourceLocation("derpcoin:magicFood", "inventory"));
     		renderItem.getItemModelMesher().register(magicPickaxe, 0, new ModelResourceLocation("derpcoin:magicPickaxe", "inventory"));
     		//renderItem.getItemModelMesher().register(derpBackpack, 0, new ModelResourceLocation("derpcoin:derpBackpack", "inventory"));
@@ -221,7 +221,7 @@ public class Thingy
 		GameRegistry.registerItem(magicDownfall, "MagicDownfall");
 		GameRegistry.registerItem(derpSack, "derpSack");
 		GameRegistry.registerItem(derpCoinU, "derpCoinU");
-		GameRegistry.registerItem(derpHealer, "derpHealer");
+		GameRegistry.registerItem(magicHealer, "magicHealer");
 		GameRegistry.registerItem(magicFood, "magicFood");
 		GameRegistry.registerItem(magicPickaxe, "magicPickaxe");
 		
@@ -246,7 +246,7 @@ public class Thingy
     	magicClock.setCreativeTab(derpTab.tabDerpCoin);
     	magicDownfall.setCreativeTab(derpTab.tabDerpCoin);
     	derpSack.setCreativeTab(derpTab.tabDerpCoin);
-    	derpHealer.setCreativeTab(derpTab.tabDerpCoin);
+    	magicHealer.setCreativeTab(derpTab.tabDerpCoin);
     	magicFood.setCreativeTab(derpTab.tabDerpCoin);
     	magicPickaxe.setCreativeTab(derpTab.tabDerpCoin);
     	//derpBackpack.setCreativeTab(derpTab.tabDerpCoin);
