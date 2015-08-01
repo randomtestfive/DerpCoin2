@@ -41,7 +41,7 @@ public class MagicPickaxe extends ItemPickaxe
 		if(counter == 20)
 		{
 			counter = 0;
-			System.out.println("pickcount");
+			//System.out.println("pickcount");
 			if(par3entity instanceof EntityPlayer)
 			{
 				EntityPlayer player = (EntityPlayer) par3entity;
