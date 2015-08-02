@@ -1,27 +1,25 @@
 package FirstMod.Base;
 
-import java.util.List;
-
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class MagicPickaxe extends ItemPickaxe
+public class MagicSword extends ItemSword
 {
 	private DCConsumer consumer;
 	
 	private int counter = 0;
-
-	public MagicPickaxe(ToolMaterial p_i45347_1_) 
+	
+	public MagicSword(ToolMaterial p_i45356_1_) 
 	{
-		super(p_i45347_1_);
+		super(p_i45356_1_);
 		this.setUnlocalizedName("magicPickaxe");
 		consumer = new DCConsumer();
 		this.setMaxStackSize(1);
@@ -31,7 +29,6 @@ public class MagicPickaxe extends ItemPickaxe
 	public void onCreated(ItemStack par1Item, World par2World, EntityPlayer par3Player)
 	{
 		par1Item.setTagCompound(new NBTTagCompound());
-		//par1Item.getTagCompound().setInteger("MagicTime", 0);
 		par1Item.getTagCompound().setBoolean("Active", false);
 	}
 	
@@ -42,7 +39,7 @@ public class MagicPickaxe extends ItemPickaxe
 		if(counter == 20)
 		{
 			counter = 0;
-			//System.out.println("pickcount");
+			
 			if(par3entity instanceof EntityPlayer)
 			{
 				EntityPlayer player = (EntityPlayer) par3entity;
@@ -68,64 +65,22 @@ public class MagicPickaxe extends ItemPickaxe
 		}
 	}
 	
-	@Override
-	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3Player)
-	{
-		NBTTagCompound tag = par1ItemStack.getTagCompound();
-		if(tag != null)
-		{
-			tag.setBoolean("Active", !tag.getBoolean("Active"));
-		}
-		else
-		{
-			tag = new NBTTagCompound();
-			par1ItemStack.setTagCompound(tag);
-		}
-		return par1ItemStack;
-	}
 	
-	@Override
-	public float getDigSpeed(ItemStack stack, net.minecraft.block.state.IBlockState state)
-	{
-		NBTTagCompound tag = stack.getTagCompound();
-		if(tag != null)
-		{
-			if(tag.getBoolean("Active"))
-			{
-				return 2000.0F;
-			}
-		}
-		else
-		{
-			tag = new NBTTagCompound();
-			stack.setTagCompound(tag);
-		}
-		return 8.0F;
-	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public ModelResourceLocation getModel(ItemStack stack, EntityPlayer player, int useRemaining)
 	{
 		NBTTagCompound tag = stack.getTagCompound();
-		ModelResourceLocation out = new ModelResourceLocation("derpcoin:magicPickaxe", "inventory");
+		ModelResourceLocation out = new ModelResourceLocation("derpcoin:magicSword", "inventory");
 		if(tag != null)
 		{
 			if(stack.getTagCompound().getBoolean("Active"))
 			{	
-				out = new ModelResourceLocation("derpcoin:magicPickaxeA", "inventory");
+				out = new ModelResourceLocation("derpcoin:magicSwordA", "inventory");
 			}
 		}
 		return out;
 	}
-	
-	/*@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4) 
-	{
-		if (itemStack.getTagCompound() != null) 
-		{
-            int magicTime = itemStack.getTagCompound().getInteger("MagicTime");
-            list.add(EnumChatFormatting.DARK_PURPLE + "Magic Time: " + magicTime);
-		}
-	}*/
+
 }
