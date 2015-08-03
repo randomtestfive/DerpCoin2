@@ -1,7 +1,11 @@
 package labyrinth.derpcoin.base;
 
+import com.google.common.collect.Multimap;
+
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -16,6 +20,9 @@ public class MagicSword extends ItemSword
 	private DCConsumer consumer;
 	
 	private int counter = 0;
+	private ToolMaterial material;
+	private double damageLow = 8;
+	private double damageHigh = 500;
 	
 	public MagicSword(ToolMaterial p_i45356_1_) 
 	{
@@ -23,6 +30,7 @@ public class MagicSword extends ItemSword
 		this.setUnlocalizedName("magicPickaxe");
 		consumer = new DCConsumer();
 		this.setMaxStackSize(1);
+		this.material = p_i45356_1_;
 	}
 	
 	@Override
@@ -63,6 +71,26 @@ public class MagicSword extends ItemSword
 				}
 			}
 		}
+		
+		if(par3entity instanceof EntityPlayer)
+		{
+			EntityPlayer player = (EntityPlayer) par3entity;
+			if(par1stack.getTagCompound() != null)
+			{
+				if(par1stack.getTagCompound().getBoolean("Active"))
+				{
+					
+				}
+				else
+				{
+					
+				}
+			}
+			else
+			{
+				par1stack.setTagCompound(new NBTTagCompound());
+			}
+		}
 	}
 	
 	
@@ -82,5 +110,13 @@ public class MagicSword extends ItemSword
 		}
 		return out;
 	}
+	
+	@Override    
+	public Multimap getItemAttributeModifiers()
+    {
+        Multimap multimap = super.getItemAttributeModifiers();
+        multimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(itemModifierUUID, "Weapon modifier", (double)this.material.getDamageVsEntity(), 0));
+        return multimap;
+    }
 
 }

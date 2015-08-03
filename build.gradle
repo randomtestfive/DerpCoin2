@@ -18,7 +18,7 @@ buildscript {
 apply plugin: 'forge'
 
 version = "0.10.24"
-group= "FirstMod.Base" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group= "labyrinth.derpcoin" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "DerpCoin"
 
 minecraft {
