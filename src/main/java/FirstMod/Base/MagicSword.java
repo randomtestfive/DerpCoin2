@@ -47,7 +47,7 @@ public class MagicSword extends ItemSword
 				{
 					if(par1stack.getTagCompound().getBoolean("Active"))
 					{
-						if(consumer.subDerpsack(player.inventory) || player.inventory.consumeInventoryItem(Thingy.derpCoin))
+						if(consumer.subDerpsack(player.inventory) || player.inventory.consumeInventoryItem(Main.derpCoin))
 						{
 						
 						}

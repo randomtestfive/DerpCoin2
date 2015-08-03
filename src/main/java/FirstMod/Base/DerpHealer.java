@@ -18,7 +18,7 @@ public class DerpHealer extends DCConsumer
 	{
 		if(par3Player.getHealth() != 20)
 		{
-			if(subDerpsack(par3Player.inventory) || par3Player.inventory.consumeInventoryItem(Thingy.derpCoin))
+			if(subDerpsack(par3Player.inventory) || par3Player.inventory.consumeInventoryItem(Main.derpCoin))
 			{
 				if(par3Player.getHealth() == 19)
 				{

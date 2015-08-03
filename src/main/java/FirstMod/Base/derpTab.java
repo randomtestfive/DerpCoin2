@@ -20,7 +20,7 @@ public class derpTab extends CreativeTabs
         @SideOnly(Side.CLIENT)
         public Item getTabIconItem() 
         {
-            return Thingy.derpCoin;
+            return Main.derpCoin;
         }
     };
 
@@ -28,7 +28,7 @@ public class derpTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public ItemStack getIconItemStack()
 	{
-		return new ItemStack(Thingy.derpCoin);
+		return new ItemStack(Main.derpCoin);
 	}
 	public String getTranslatedTabLabel()
 	{
@@ -38,7 +38,7 @@ public class derpTab extends CreativeTabs
 	@Override
 	public Item getTabIconItem() 
 	{
-		return Thingy.derpCoin;
+		return Main.derpCoin;
 	}
 
 }

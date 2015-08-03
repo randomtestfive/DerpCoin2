@@ -35,11 +35,11 @@ import FirstMod.Client.ClientProxy;
 
 
 
-@Mod(modid = "DerpCoin", version = Thingy.VERSION)
-public class Thingy
+@Mod(modid = "DerpCoin", version = Main.VERSION)
+public class Main
 {
 	@Instance(value="DerpCoin")
-	public static Thingy instance;
+	public static Main instance;
     public static final String MODID = "ThingyTest";
     public static final String VERSION = "0.4.7";
     
@@ -76,7 +76,7 @@ public class Thingy
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-    	Thingy.proxy.preInit(event);
+    	Main.proxy.preInit(event);
     	derpSword = new ItemSword(derpMaterial);
     	derpSword.setUnlocalizedName("derpSword");
     	
@@ -163,7 +163,7 @@ public class Thingy
     {
     	
     	//NetworkRegistry.INSTANCE.registerGuiHandler(this, new GUIHandler());
-    	Thingy.proxy.init(event);
+    	Main.proxy.init(event);
     	//RenderingRegistry.registerEntityRenderingHandler(DerpCoinProjectile.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), derpCoin, Minecraft.getMinecraft().getRenderItem()));
     	ModelBakery.addVariantName(magicClock, "derpcoin:magicClockBackward", "derpcoin:magicClockForward");
     	ModelBakery.addVariantName(magicDownfall, "derpcoin:magicDownfallFull", "derpcoin:magicDownfallEmpty");

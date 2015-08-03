@@ -82,7 +82,7 @@ public class DerpSack extends Item
 			{
 				if (par1ItemStack.getTagCompound() != null)
 				{
-					if (par3Player.inventory.consumeInventoryItem(Thingy.derpCoin))
+					if (par3Player.inventory.consumeInventoryItem(Main.derpCoin))
 					{
 						par1ItemStack.getTagCompound().setInteger("DerpCoins", par1ItemStack.getTagCompound().getInteger("DerpCoins") + 1);
 						//System.out.println(par1ItemStack.getTagCompound().getInteger("DerpCoins"));
@@ -132,7 +132,7 @@ public class DerpSack extends Item
 				{
 					itemstack.stackSize = 1;
 					derpsack.getTagCompound().setInteger("DerpCoins", derpsack.getTagCompound().getInteger("DerpCoins") + stackAmount);
-					inventory.consumeInventoryItem(Thingy.derpCoin);
+					inventory.consumeInventoryItem(Main.derpCoin);
 				}
 				else
 				{

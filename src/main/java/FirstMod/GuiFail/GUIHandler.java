@@ -1,6 +1,6 @@
 package FirstMod.GuiFail;
 
-import FirstMod.Base.Thingy;
+import FirstMod.Base.Main;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;

@@ -120,7 +120,7 @@ public class MagicClock extends DCConsumer
 		}
 		else
 		{
-			if (par3Player.capabilities.isCreativeMode || subDerpsack(par3Player.inventory) || par3Player.inventory.consumeInventoryItem(Thingy.derpCoin))
+			if (par3Player.capabilities.isCreativeMode || subDerpsack(par3Player.inventory) || par3Player.inventory.consumeInventoryItem(Main.derpCoin))
 			{
 				if(par1Stack.getItemDamage() == 0)
 				{

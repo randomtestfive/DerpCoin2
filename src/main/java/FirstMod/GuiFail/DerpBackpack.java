@@ -1,6 +1,6 @@
 package FirstMod.GuiFail;
 
-import FirstMod.Base.Thingy;
+import FirstMod.Base.Main;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ContainerPlayer;
@@ -20,7 +20,7 @@ public class DerpBackpack extends Item
 	@Override
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
 	{
-		FMLNetworkHandler.openGui(par3EntityPlayer, Thingy.instance, References.GUI_BACKPACK, par2World, (int)par3EntityPlayer.posX, (int)par3EntityPlayer.posY, (int)par3EntityPlayer.posZ);
+		FMLNetworkHandler.openGui(par3EntityPlayer, Main.instance, References.GUI_BACKPACK, par2World, (int)par3EntityPlayer.posX, (int)par3EntityPlayer.posY, (int)par3EntityPlayer.posZ);
 		
 		return par1ItemStack;
 	}

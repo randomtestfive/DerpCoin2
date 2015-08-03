@@ -40,7 +40,7 @@ public class DerpCoinProjectile extends EntityThrowable
     		{
     			if(!this.worldObj.isRemote)
     			{
-    				this.entityDropItem(new ItemStack(Thingy.derpCoin, 1), 0.0F);
+    				this.entityDropItem(new ItemStack(Main.derpCoin, 1), 0.0F);
     			}
     			//this.dropItem(Thingy.derpCoin, 1);
     			//this.worldObj.spawnEntityInWorld(new EntityItem(this.worldObj, this.posX, this.posY, this.posZ, new ItemStack(Thingy.derpCoin)));

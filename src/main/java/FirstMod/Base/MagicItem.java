@@ -22,7 +22,7 @@ public class MagicItem extends DCConsumer
 			 //par2World.setWorldTime(0);
 			 //par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 0.5F, 0.4F);
 			 par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 1F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
-			 if(par3EntityPlayer.capabilities.isCreativeMode || subDerpsack(par3EntityPlayer.inventory) || par3EntityPlayer.inventory.consumeInventoryItem(Thingy.derpCoin))
+			 if(par3EntityPlayer.capabilities.isCreativeMode || subDerpsack(par3EntityPlayer.inventory) || par3EntityPlayer.inventory.consumeInventoryItem(Main.derpCoin))
 			 {
 				 /*if (!par2World.isRemote)
 				 {

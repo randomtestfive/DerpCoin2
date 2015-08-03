@@ -20,6 +20,6 @@ public class ClientProxy extends CommonProxy
 	
     public void registerRenderers() 
     {
-    	RenderingRegistry.registerEntityRenderingHandler(DerpCoinProjectile.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), FirstMod.Base.Thingy.derpCoinU, Minecraft.getMinecraft().getRenderItem()));
+    	RenderingRegistry.registerEntityRenderingHandler(DerpCoinProjectile.class, new RenderSnowball(Minecraft.getMinecraft().getRenderManager(), FirstMod.Base.Main.derpCoinU, Minecraft.getMinecraft().getRenderItem()));
     }
 }

@@ -20,7 +20,7 @@ public class DerpFood extends ItemFood
 	@Override
     public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityPlayer playerIn)
     {
-        if(subDerpsack(playerIn.inventory) || playerIn.inventory.consumeInventoryItem(Thingy.derpCoin))
+        if(subDerpsack(playerIn.inventory) || playerIn.inventory.consumeInventoryItem(Main.derpCoin))
         {
         	playerIn.getFoodStats().addStats(this, stack);
         	worldIn.playSoundAtEntity(playerIn, "random.burp", 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
