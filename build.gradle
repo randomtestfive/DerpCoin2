@@ -19,7 +19,7 @@ apply plugin: 'forge'
 
 version = "0.10.24"
 group= "labyrinth.derpcoin" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "DerpCoin"
+archivesBaseName = "derpcoin"
 
 minecraft {
     version = "1.8-11.14.3.1450" //"1.7.10-10.13.2.1291"
