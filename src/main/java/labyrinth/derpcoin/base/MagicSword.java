@@ -4,6 +4,7 @@ import com.google.common.collect.Multimap;
 
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,6 +12,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -71,26 +73,6 @@ public class MagicSword extends ItemSword
 				}
 			}
 		}
-		
-		if(par3entity instanceof EntityPlayer)
-		{
-			EntityPlayer player = (EntityPlayer) par3entity;
-			if(par1stack.getTagCompound() != null)
-			{
-				if(par1stack.getTagCompound().getBoolean("Active"))
-				{
-					
-				}
-				else
-				{
-					
-				}
-			}
-			else
-			{
-				par1stack.setTagCompound(new NBTTagCompound());
-			}
-		}
 	}
 	
 	
@@ -111,12 +93,33 @@ public class MagicSword extends ItemSword
 		return out;
 	}
 	
-	@Override    
+	/*@Override    
 	public Multimap getItemAttributeModifiers()
     {
         Multimap multimap = super.getItemAttributeModifiers();
         multimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(itemModifierUUID, "Weapon modifier", (double)this.material.getDamageVsEntity(), 0));
         return multimap;
+    }*/
+	
+	@Override
+    public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase par2EntityLivingBase, EntityLivingBase par3EntityLivingBase)
+    {
+    	if (this.getDamage(par1ItemStack) >= 998)
+    		return false;
+    	float damage = (float) damageLow;
+    	if(par1ItemStack.hasTagCompound())
+    	{
+    		System.out.println("works");
+			if(par1ItemStack.getTagCompound().getBoolean("Active"))
+			{
+				System.out.println("works1");
+				damage+=2.0F;
+			}
+    	}
+    	DamageSource damagesource = DamageSource.causePlayerDamage((EntityPlayer)par3EntityLivingBase);
+    	par2EntityLivingBase.attackEntityFrom(damagesource, damage);
+    	par1ItemStack.damageItem(1, par3EntityLivingBase);
+    	return true;
     }
 
 }

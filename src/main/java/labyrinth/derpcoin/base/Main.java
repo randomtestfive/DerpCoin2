@@ -33,11 +33,11 @@ public class Main
 {
 	@Instance(value="DerpCoin")
 	public static Main instance;
-    public static final String MODID = "ThingyTest";
-    public static final String VERSION = "0.4.7";
+    public static final String MODID = "DerpCoin";
+    public static final String VERSION = "0.10.26";
     
     
-    @SidedProxy(clientSide="FirstMod.Client.ClientProxy", serverSide="CommonProxy")
+    @SidedProxy(clientSide="labyrinth.derpcoin.client.ClientProxy", serverSide="CommonProxy")
     public static CommonProxy proxy;
     public static ClientProxy client;
     public static DerpCoin derpCoin;

@@ -14,8 +14,11 @@ public class DCConsumer extends Item
 		{
 			if (s != null && s.getItem() instanceof DerpSack) 
 			{
-				itemstack = s;
-				break;
+				if(s.getTagCompound().getInteger("DerpCoins") != 0)
+				{
+					itemstack = s;
+					break;
+				}
 			}
 		}
 		if(itemstack != null)
