@@ -24,12 +24,12 @@ public class MagicSword extends ItemSword
 	private int counter = 0;
 	private ToolMaterial material;
 	private double damageLow = 8;
-	private double damageHigh = 500;
+	private double damageHigh = 50;
 	
 	public MagicSword(ToolMaterial p_i45356_1_) 
 	{
 		super(p_i45356_1_);
-		this.setUnlocalizedName("magicPickaxe");
+		this.setUnlocalizedName("magicSword");
 		consumer = new DCConsumer();
 		this.setMaxStackSize(1);
 		this.material = p_i45356_1_;
@@ -40,6 +40,29 @@ public class MagicSword extends ItemSword
 	{
 		par1Item.setTagCompound(new NBTTagCompound());
 		par1Item.getTagCompound().setBoolean("Active", false);
+	}
+	
+	@Override
+	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3Player)
+	{
+		NBTTagCompound tag = par1ItemStack.getTagCompound();
+		if(par3Player.isSneaking())
+		{
+			if(tag != null)
+			{
+				tag.setBoolean("Active", !tag.getBoolean("Active"));
+			}
+			else
+			{
+				tag = new NBTTagCompound();
+				par1ItemStack.setTagCompound(tag);
+			}
+		}
+		else
+		{
+			par3Player.setItemInUse(par1ItemStack, this.getMaxItemUseDuration(par1ItemStack));
+		}
+		return par1ItemStack;
 	}
 	
 	@Override
@@ -113,7 +136,7 @@ public class MagicSword extends ItemSword
 			if(par1ItemStack.getTagCompound().getBoolean("Active"))
 			{
 				System.out.println("works1");
-				damage+=2.0F;
+				damage = (float) damageHigh;
 			}
     	}
     	DamageSource damagesource = DamageSource.causePlayerDamage((EntityPlayer)par3EntityLivingBase);

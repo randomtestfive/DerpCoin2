@@ -6,11 +6,8 @@
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "https://github.com/randomtestfive/DerpCoin2",
-  "updateUrl": "",
   "authorList": ["RandomTestFive","Snydecor000"],
   "credits": "Time Travel",
-  "logoFile": "derpcoin:derpCoin",
-  "screenshots": [],
-  "dependencies": []
+  "logoFile": "assets/derpcoin/textures/items/derpCoin.png",
 }
 ]

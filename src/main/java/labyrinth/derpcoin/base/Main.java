@@ -161,7 +161,7 @@ public class Main
     	ModelBakery.addVariantName(magicClock, "derpcoin:magicClockBackward", "derpcoin:magicClockForward");
     	ModelBakery.addVariantName(magicDownfall, "derpcoin:magicDownfallFull", "derpcoin:magicDownfallEmpty");
     	ModelBakery.addVariantName(magicPickaxe, "derpcoin:magicPickaxe", "derpcoin:magicPickaxeA");
-    	ModelBakery.addVariantName(magicPickaxe, "derpcoin:magicSword", "derpcoin:magicSwordA");
+    	ModelBakery.addVariantName(magicSword, "derpcoin:magicSword", "derpcoin:magicSwordA");
     	ModelBakery.addVariantName(derpSack, "derpcoin:derpsackEmpty", "derpcoin:derpsackPartial1", "derpcoin:derpsackPartial2", "derpcoin:derpsackPartial3", "derpcoin:derpsackFull");
     	
     	if(event.getSide() == Side.CLIENT)
@@ -194,7 +194,7 @@ public class Main
     		renderItem.getItemModelMesher().register(magicHealer, 0, new ModelResourceLocation("derpcoin:magicHealer", "inventory"));
     		renderItem.getItemModelMesher().register(magicFood, 0, new ModelResourceLocation("derpcoin:magicFood", "inventory"));
     		renderItem.getItemModelMesher().register(magicPickaxe, 0, new ModelResourceLocation("derpcoin:magicPickaxe", "inventory"));
-    		renderItem.getItemModelMesher().register(magicSword, 0, new ModelResourceLocation("derpcoin:magicPickaxe", "inventory"));
+    		renderItem.getItemModelMesher().register(magicSword, 0, new ModelResourceLocation("derpcoin:magicSword", "inventory"));
     		//renderItem.getItemModelMesher().register(derpBackpack, 0, new ModelResourceLocation("derpcoin:derpBackpack", "inventory"));
     		renderItem.getItemModelMesher().register(Item.getItemFromBlock(derpCoinBlock), 0, new ModelResourceLocation("derpcoin:" + "derpCoinBlock", "inventory"));
     	}
