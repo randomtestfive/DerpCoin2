@@ -17,7 +17,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "0.10.33"
+version = "0.10.34"
 group= "labyrinth.derpcoin" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "DerpCoin"
 

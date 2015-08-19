@@ -5,6 +5,7 @@ import java.util.List;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -16,7 +17,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class MagicPickaxe extends ItemPickaxe
 {
 	private DCConsumer consumer;
-	
 	private int counter = 0;
 
 	public MagicPickaxe(ToolMaterial p_i45347_1_) 
@@ -37,7 +37,7 @@ public class MagicPickaxe extends ItemPickaxe
 	
 	@Override
 	public void onUpdate(ItemStack par1stack, World par2world, Entity par3entity, int par4slot, boolean isSelected) 
-	{
+	{	
 		counter = counter + 1;
 		if(counter == 20)
 		{
