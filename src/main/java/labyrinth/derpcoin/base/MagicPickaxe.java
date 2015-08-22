@@ -74,7 +74,17 @@ public class MagicPickaxe extends ItemPickaxe
 		NBTTagCompound tag = par1ItemStack.getTagCompound();
 		if(tag != null)
 		{
-			tag.setBoolean("Active", !tag.getBoolean("Active"));
+			if(!tag.getBoolean("Active"))
+			{
+				if(consumer.subDerpsack(par3Player.inventory) || par3Player.inventory.consumeInventoryItem(Main.derpCoin))
+				{
+					tag.setBoolean("Active", true);
+				}
+			}
+			else
+			{
+				tag.setBoolean("Active", false);
+			}
 		}
 		else
 		{
