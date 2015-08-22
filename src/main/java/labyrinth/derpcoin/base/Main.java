@@ -46,10 +46,15 @@ public class Main
     public static MagicClock magicClock;
     public static MagicToggledownfall magicDownfall;
     public static ArmorMaterial derpArmor = EnumHelper.addArmorMaterial("derpArmor", "derpcoin:derpArmor", 20, new int[]{3, 7, 6, 3} , 25);
+    public static ArmorMaterial magicArmor = EnumHelper.addArmorMaterial("magicArmor", "derpcoin:magicArmor", 40, new int[]{4, 8, 7, 4} , 30);//XXX We need to change this
     public static DerpArmor derpHelmet;
     public static DerpArmor derpChestplate;
     public static DerpArmor derpLeggings;
     public static DerpArmor derpBoots;
+    public static MagicArmor magicHelmet;
+    public static MagicArmor magicChestplate;
+    public static MagicArmor magicLeggings;
+    public static MagicArmor magicBoots;
     public static ToolMaterial derpMaterial = EnumHelper.addToolMaterial("derpMaterial", 3, 600, 7.0F, 2.5F, 22);
     public static ToolMaterial magicMaterial = EnumHelper.addToolMaterial("magicMaterial", 4, 1800, 8.0F, 4.0F, 20);
     public static ItemSword derpSword;
@@ -136,6 +141,12 @@ public class Main
 		GameRegistry.addRecipe(new ItemStack(derpLeggings), "XXX", "X X", "X X", 'X', new ItemStack(derpIngot));
 		GameRegistry.addRecipe(new ItemStack(derpBoots), "X X", "X X", "   ", 'X', new ItemStack(derpIngot));
 		GameRegistry.addRecipe(new ItemStack(derpBoots), "   ", "X X", "X X", 'X', new ItemStack(derpIngot));
+		GameRegistry.addRecipe(new ItemStack(magicHelmet), "   ", "XXX", "X X", 'X', new ItemStack(magicItem));
+		GameRegistry.addRecipe(new ItemStack(magicHelmet), "XXX", "X X", "   ", 'X', new ItemStack(magicItem));
+		GameRegistry.addRecipe(new ItemStack(magicChestplate), "X X", "XXX", "XXX", 'X', new ItemStack(magicItem));
+		GameRegistry.addRecipe(new ItemStack(magicLeggings), "XXX", "X X", "X X", 'X', new ItemStack(magicItem));
+		GameRegistry.addRecipe(new ItemStack(magicBoots), "X X", "X X", "   ", 'X', new ItemStack(magicItem));
+		GameRegistry.addRecipe(new ItemStack(magicBoots), "   ", "X X", "X X", 'X', new ItemStack(magicItem));
 		GameRegistry.addRecipe(new ItemStack(derpSword), " X ", " X ", " Y ", 'X', new ItemStack(derpIngot), 'Y', new ItemStack(Items.stick));
 		GameRegistry.addRecipe(new ItemStack(derpPickaxe), "XXX", " Y ", " Y ", 'X', new ItemStack(derpIngot), 'Y', new ItemStack(Items.stick));
 		GameRegistry.addRecipe(new ItemStack(derpAxe), " XX", " YX", " Y ", 'X', new ItemStack(derpIngot), 'Y', new ItemStack(Items.stick));
@@ -182,6 +193,10 @@ public class Main
     		renderItem.getItemModelMesher().register(derpChestplate, 0, new ModelResourceLocation("derpcoin:" + "derp_chestplate", "inventory"));
     		renderItem.getItemModelMesher().register(derpLeggings, 0, new ModelResourceLocation("derpcoin:" + "derp_leggings", "inventory"));
     		renderItem.getItemModelMesher().register(derpBoots, 0, new ModelResourceLocation("derpcoin:" + "derp_boots", "inventory"));
+    		renderItem.getItemModelMesher().register(magicHelmet, 0, new ModelResourceLocation("derpcoin:" + "magic_helmet", "inventory"));
+    		renderItem.getItemModelMesher().register(magicChestplate, 0, new ModelResourceLocation("derpcoin:" + "magic_chestplate", "inventory"));
+    		renderItem.getItemModelMesher().register(magicLeggings, 0, new ModelResourceLocation("derpcoin:" + "magic_leggings", "inventory"));
+    		renderItem.getItemModelMesher().register(magicBoots, 0, new ModelResourceLocation("derpcoin:" + "magic_boots", "inventory"));
     		renderItem.getItemModelMesher().register(magicItem, 0, new ModelResourceLocation("derpcoin:" + "magicItem", "inventory"));
     		renderItem.getItemModelMesher().register(derpIngot, 0, new ModelResourceLocation("derpcoin:" + "derpIngot", "inventory"));
     		renderItem.getItemModelMesher().register(derpCoinU, 0, new ModelResourceLocation("derpcoin:derpCoinU", "inventory"));
@@ -214,6 +229,10 @@ public class Main
 		GameRegistry.registerItem(derpChestplate = new DerpArmor("derpChestplate", derpArmor, 1, 1), "derp_chestplate"); 
 		GameRegistry.registerItem(derpLeggings = new DerpArmor("derpLeggings", derpArmor, 2, 2), "derp_leggings"); 
 		GameRegistry.registerItem(derpBoots = new DerpArmor("derpBoots", derpArmor, 1, 3), "derp_boots");
+		GameRegistry.registerItem(magicHelmet = new MagicArmor("magicHelmet", magicArmor, 1, 0), "magic_helmet");
+		GameRegistry.registerItem(magicChestplate = new MagicArmor("magicChestplate", magicArmor, 1, 1), "magic_chestplate"); 
+		GameRegistry.registerItem(magicLeggings = new MagicArmor("magicLeggings", magicArmor, 2, 2), "magic_leggings"); 
+		GameRegistry.registerItem(magicBoots = new MagicArmor("magicBoots", magicArmor, 1, 3), "magic_boots");	
 		GameRegistry.registerItem(magicItem, "magicItem");
 		GameRegistry.registerItem(magicClock, "magicClock");
 		GameRegistry.registerItem(magicDownfall, "MagicDownfall");
@@ -249,6 +268,10 @@ public class Main
     	magicFood.setCreativeTab(DerpTab.tabDerpCoin);
     	magicPickaxe.setCreativeTab(DerpTab.tabDerpCoin);
     	magicSword.setCreativeTab(DerpTab.tabDerpCoin);
+    	magicHelmet.setCreativeTab(DerpTab.tabDerpCoin);
+    	magicChestplate.setCreativeTab(DerpTab.tabDerpCoin);
+    	magicLeggings.setCreativeTab(DerpTab.tabDerpCoin);
+    	magicBoots.setCreativeTab(DerpTab.tabDerpCoin);
     	//derpBackpack.setCreativeTab(derpTab.tabDerpCoin);
     }
 }
