@@ -1,7 +1,6 @@
 package labyrinth.derpcoin.base;
 
 import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
 
 public class MagicArmor extends ItemArmor
 {

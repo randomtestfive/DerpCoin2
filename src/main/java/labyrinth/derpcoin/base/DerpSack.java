@@ -97,8 +97,9 @@ public class DerpSack extends Item
 		return par1ItemStack;
 	 }
 	
+	@SuppressWarnings("unchecked")
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4) 
+	public void addInformation(ItemStack itemStack, EntityPlayer player, @SuppressWarnings("rawtypes") List list, boolean par4) 
 	{
 		if (itemStack.getTagCompound() != null) 
 		{

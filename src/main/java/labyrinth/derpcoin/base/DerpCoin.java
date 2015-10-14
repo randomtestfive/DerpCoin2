@@ -2,7 +2,6 @@ package labyrinth.derpcoin.base;
 
 
 import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class DerpCoin extends Item 
 {

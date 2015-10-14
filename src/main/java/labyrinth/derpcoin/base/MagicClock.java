@@ -1,16 +1,11 @@
 package labyrinth.derpcoin.base;
 
-import java.util.List;
 
-import net.minecraft.command.ICommandSender;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class MagicClock extends DCConsumer
 {

@@ -1,29 +1,24 @@
 package labyrinth.derpcoin.base;
 
-import java.util.List;
 
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class MagicPickaxe extends ItemPickaxe
 {
-	private DCConsumer consumer;
 	private int counter = 0;
 
 	public MagicPickaxe(ToolMaterial p_i45347_1_) 
 	{
 		super(p_i45347_1_);
 		this.setUnlocalizedName("magicPickaxe");
-		consumer = new DCConsumer();
 		this.setMaxStackSize(1);
 	}
 	
@@ -50,7 +45,7 @@ public class MagicPickaxe extends ItemPickaxe
 				{
 					if(par1stack.getTagCompound().getBoolean("Active"))
 					{
-						if(consumer.subDerpsack(player.inventory) || player.inventory.consumeInventoryItem(Main.derpCoin))
+						if(DCConsumer.subDerpsack(player.inventory) || player.inventory.consumeInventoryItem(Main.derpCoin))
 						{
 						
 						}
@@ -76,7 +71,7 @@ public class MagicPickaxe extends ItemPickaxe
 		{
 			if(!tag.getBoolean("Active"))
 			{
-				if(consumer.subDerpsack(par3Player.inventory) || par3Player.inventory.consumeInventoryItem(Main.derpCoin))
+				if(DCConsumer.subDerpsack(par3Player.inventory) || par3Player.inventory.consumeInventoryItem(Main.derpCoin))
 				{
 					tag.setBoolean("Active", true);
 				}

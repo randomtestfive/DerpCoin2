@@ -1,8 +1,6 @@
 package labyrinth.derpcoin.base;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemStack;
 
 public class DerpArmor extends ItemArmor 
 {

@@ -1,14 +1,10 @@
 package labyrinth.derpcoin.base;
 
-import com.google.common.collect.Multimap;
 
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.nbt.NBTTagCompound;
@@ -19,10 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class MagicSword extends ItemSword
 {
-	private DCConsumer consumer;
-	
 	private int counter = 0;
-	private ToolMaterial material;
 	private double damageLow = 8;
 	private double damageHigh = 50;
 	
@@ -30,9 +23,7 @@ public class MagicSword extends ItemSword
 	{
 		super(p_i45356_1_);
 		this.setUnlocalizedName("magicSword");
-		consumer = new DCConsumer();
 		this.setMaxStackSize(1);
-		this.material = p_i45356_1_;
 	}
 	
 	@Override
@@ -80,7 +71,7 @@ public class MagicSword extends ItemSword
 				{
 					if(par1stack.getTagCompound().getBoolean("Active"))
 					{
-						if(consumer.subDerpsack(player.inventory) || player.inventory.consumeInventoryItem(Main.derpCoin))
+						if(DCConsumer.subDerpsack(player.inventory) || player.inventory.consumeInventoryItem(Main.derpCoin))
 						{
 						
 						}
